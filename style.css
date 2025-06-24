@@ -1052,12 +1052,15 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: var(--color-background); /* Fix: use --color-background */
-  z-index: 1000;
+  background: var(--color-background);
+  z-index: 2000;
   padding: 2rem;
   box-sizing: border-box;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .mobile-menu.active {
@@ -1066,6 +1069,8 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-menu a {
@@ -1084,9 +1089,10 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
   right: 2rem;
   background: none;
   border: none;
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--color-text);
   cursor: pointer;
+  z-index: 2100;
 }
 
 /* Large screens - 3 cards per row */
@@ -1421,9 +1427,260 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
   }
 }
 
+/* Mobile font scaling */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  body {
+    font-size: 0.95rem;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4, h5, h6 {
+    font-size: 1rem;
+  }
+  .nav__link,
+  .mobile-menu a {
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+  }
+  .mobile-menu {
+    padding: 1rem;
+  }
+  .mobile-menu-close {
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+  }
+  .btn,
+  .btn--primary,
+  .btn--outline,
+  .btn--secondary {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  .hero__name {
+    font-size: 1.2rem;
+  }
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+  .stat__value {
+    font-size: 1.1rem;
+  }
+  .section-title {
+    font-size: 1.2rem;
+  }
+  .service-card__title {
+    font-size: 1.1rem;
+  }
+  .service-card__description,
+  .service-card__features li {
+    font-size: 0.95rem;
+  }
+  .result-card__title,
+  .result-card__description {
+    font-size: 1rem;
+  }
+  .case-study-title {
+    font-size: 1rem;
+  }
+  .case-study-impact {
+    font-size: 0.95rem;
+  }
+  .case-study-domain {
+    font-size: 0.9rem;
+  }
+  .expertise__name {
+    font-size: 1rem;
+  }
+  .expertise__description {
+    font-size: 0.9rem;
+  }
+  .gallery__caption {
+    font-size: 0.9rem;
+  }
+  .contact__title {
+    font-size: 1.1rem;
+  }
+  .contact__description {
+    font-size: 0.95rem;
+  }
+  .footer__logo {
+    font-size: 1rem;
+  }
+  .footer__tagline {
+    font-size: 0.9rem;
+  }
+  .footer__link {
+    font-size: 0.95rem;
+  }
+}
 
+/* --- Aggressive mobile scaling for all text and UI elements --- */
+@media (max-width: 600px) {
+  html {
+    font-size: 15.88px; /* 1.3% smaller than 16.0901px for consistency */
+  }
+  body {
+    font-size: 0.9935rem; /* 1.3% smaller than 1.00664rem */
+  }
+  .header__content, .footer__content, .container {
+    padding-left: 0.89rem;
+    padding-right: 0.89rem;
+  }
+  .header__logo .logo-text {
+    font-size: 1.985rem;
+  }
+  .nav__list {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: flex-start;
+  }
+  .nav__link, .mobile-menu .nav__link {
+    font-size: 1.19rem;
+    padding: 0.9935rem 0.596rem;
+    display: block;
+  }
+  .mobile-menu {
+    padding-top: 1.985rem;
+    width: 90vw;
+    left: 5vw;
+    right: 5vw;
+    border-radius: 1.2rem;
+  }
+  .mobile-menu-close {
+    font-size: 1.985rem;
+    width: 2.98rem;
+    height: 2.98rem;
+  }
+  .dashboard-hero__title, .section-title, .hub-title, .description-title {
+    font-size: 1.7rem;
+    text-align: left;
+    margin-bottom: 0.7em;
+  }
+  .dashboard-hero__subtitle, .section-subtitle, .description-card__title {
+    font-size: 1.05rem;
+    margin-bottom: 0.5em;
+  }
+  .dashboard-hero__content, .description-content, .control-panel__content, .metrics-showcase, .footer__info, .footer__links {
+    gap: 0.7rem;
+  }
+  .description-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .description-card {
+    padding: 0.7rem 0.89rem;
+    margin-bottom: 0.7rem;
+  }
+  .control-panel__content {
+    flex-direction: column;
+    gap: 0.7rem;
+    align-items: stretch;
+  }
+  .control-group label, .control-group span, .control-group button, .emergency-button {
+    font-size: 1rem;
+  }
+  .agentic-dashboard-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .compact-sensors-panel {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0.7rem;
+    order: 1;
+  }
+  .agentic-hub {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0.7rem;
+    order: 2;
+  }
+  .chatbot-panel {
+    width: 100%;
+    min-width: 0;
+    margin-bottom: 0.7rem;
+    order: 3;
+    position: static !important;
+  }
+  .agent {
+    font-size: 1.2rem;
+    width: 2rem;
+    height: 2rem;
+  }
+  .agent-activity {
+    font-size: 0.9rem;
+    max-height: 100px;
+  }
+  .chatbot-title {
+    font-size: 1.1rem;
+  }
+  .chat-messages {
+    font-size: 0.98rem;
+    max-height: 160px;
+    min-height: 80px;
+    overflow-y: auto;
+    margin-bottom: 0.5rem;
+  }
+  .chat-input-area {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+  .chat-input {
+    font-size: 1rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .send-button {
+    font-size: 1.1rem;
+    padding: 0.5rem 0.7rem;
+  }
+  .metrics-grid {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .metric-card {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.89rem;
+    margin-bottom: 0.7rem;
+  }
+  .footer__logo {
+    font-size: 1.19rem;
+  }
+  .footer__tagline, .footer__link, .footer__bottom {
+    font-size: 0.93rem;
+  }
+  .footer__links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .footer__bottom {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: left;
+  }
+  /* Reduce all vertical and horizontal gaps, paddings, and margins for compactness */
+  section, .case-study-section, .system-description, .dashboard-main, .control-panel {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 0.5em;
+  }
+}
 
-/* Buttons */
+/* ...existing code... */
+
 .btn:focus-visible {
   outline: none;
   box-shadow: 0 0 0 3px var(--color-focus-ring);
@@ -1573,7 +1830,7 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
   gap: 1rem;
 }
 
-/* Theme Toggle with Sun/Moon Icons */
+/* Theme Toggle with Black Icons */
 .theme-toggle {
   width: 2.5rem;
   height: 2.5rem;
@@ -1596,26 +1853,77 @@ p, .text, .case-study-content, .gallery__caption, .result-card__description, .co
 }
 
 .theme-toggle__icon {
-  width: 1.25rem;
-  height: 1.25rem;
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--theme-toggle-bg, #f3f3f3);
+  font-size: 1.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+  max-width: 2.5rem;
+  max-height: 2.5rem;
+  box-sizing: border-box;
   position: relative;
 }
 
-/* Sun icon for light mode */
+/* 🌞 Light Mode: Show BLACK MOON on light background */
 .theme-toggle__icon::before {
-  content: '☀️';
+  content: '🌙';  /* Black moon emoji */
   font-size: 1.25rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  filter: brightness(0) saturate(100%); /* Makes emoji completely black */
 }
 
-/* Moon icon for dark mode */
+/* 🌙 Dark Mode: Show BLACK SUN on dark background */
 [data-theme="dark"] .theme-toggle__icon::before {
-  content: '🌙';
+  content: '☀️';  /* Black sun emoji */
+  filter: brightness(0) saturate(100%); /* Makes emoji completely black */
 }
+
+/* Alternative Method: Using Unicode Text Icons (if emojis don't work well) */
+/*
+.theme-toggle__icon::before {
+  content: '●';  /* Black circle for moon 
+  font-size: 1.5rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;  /* Force black color 
+}
+
+[data-theme="dark"] .theme-toggle__icon::before {
+  content: '◐';  /* Half circle for sun 
+  color: #000000;  /* Force black color 
+}
+*/
+
+/* Method 3: Simple Text Icons (Most Reliable) */
+/*
+.theme-toggle__icon::before {
+  content: 'MOON';
+  font-size: 0.7rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+[data-theme="dark"] .theme-toggle__icon::before {
+  content: 'SUN';
+  color: #000000;
+}
+*/
 
 /* Mobile Menu Toggle */
 .mobile-menu-toggle {
@@ -2155,18 +2463,13 @@ section {
   transition: all 0.3s ease;
   font-size: 1rem;
   line-height: 1.6;
+}
+
 .case-study-content:hover {
   background: var(--color-border);
   color: var(--color-background);
 }
-.case-study-content:hover * {
-  color: var(--color-background) !important;
-}
-  box-shadow: var(--shadow-md);
-}
-.case-study-content:hover {
-  transform: translateY(-0.25rem);
-}
+
 .case-study-content:hover * {
   color: var(--color-background) !important;
 } 
@@ -2433,7 +2736,7 @@ section {
 
 .description-content {
   text-align: center;
-  max-width: 80rem;
+  max-width:  80rem;
   margin: 0 auto;
 }
 
@@ -3398,29 +3701,4 @@ section {
 
 [data-theme="dark"] .compact-value {
   background: rgba(255, 255, 255, 0.05);
-}
-
-/* Enhanced emergency button */
-.emergency-button {
-  background: #dc3545 !important;
-  border-color: #dc3545 !important;
-  animation: pulse 2s infinite;
-  font-size: 1rem !important;
-  padding: 1rem 1.5rem !important;
-  font-weight: var(--font-weight-bold) !important;
-}
-
-.emergency-button:hover {
-  background: #c82333 !important;
-  border-color: #c82333 !important;
-}
-
-/* Agent status colors */
-.agent-status-active {
-  color: #4CAF50;
-}
-
-.agent-status-emergency {
-  color: #f44336;
-  animation: blink 0.5s infinite;
 }
