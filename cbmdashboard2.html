@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Enhanced SEO Meta Tags -->
+    <meta name="description" content="Dr. Md Junayed Hasan - Advanced Agentic AI Predictive Maintenance Dashboard with Multi-Agent Intelligence for Industrial IoT Monitoring. Experience cutting-edge autonomous AI coordination and real-time analytics.">
+    <meta name="keywords" content="Agentic AI, Multi-Agent Systems, Predictive Maintenance, Industrial AI, Power Plant Monitoring, IoT Dashboard, Real-time Analytics, Autonomous AI, AI Coordination, Machine Learning, LSTM, Random Forest, SVM, ARIMA, Transformer Models">
+    <meta name="author" content="Dr. Md Junayed Hasan">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Agentic AI Predictive Maintenance Dashboard | Dr. Md Junayed Hasan">
+    <meta property="og:description" content="Advanced Multi-Agent AI Dashboard with Autonomous Intelligence | Experience cutting-edge agentic AI coordination and predictive maintenance technology.">
+    <meta property="og:image" content="https://junayed.github.io/images/agentic-dashboard-preview.jpg">
+    <meta property="og:image:alt" content="Agentic AI Predictive Maintenance Dashboard by Dr. Md Junayed Hasan">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://junayed.github.io/agentic-dashboard.html">
+    <meta property="og:site_name" content="Dr. Md Junayed Hasan - AI Strategy Expert">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agentic AI Predictive Maintenance Dashboard | Dr. Md Junayed Hasan">
+    <meta name="twitter:description" content="Advanced Multi-Agent AI Dashboard with Autonomous Intelligence and Real-time Coordination">
+    <meta name="twitter:image" content="https://junayed.github.io/images/agentic-dashboard-preview.jpg">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic AI Predictive Maintenance Dashboard | Dr. Md Junayed Hasan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Enhanced Schema.org Dashboard Structured Data -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Agentic AI Predictive Maintenance Dashboard",
+    "description": "Advanced Multi-Agent AI Dashboard with Autonomous Intelligence for Industrial IoT Monitoring",
+    "url": "https://junayed.github.io/agentic-dashboard.html",
+    "applicationCategory": "IndustrialApplication",
+    "operatingSystem": "Web Browser",
+    "author": {
+        "@type": "Person",
+        "name": "Dr. Md Junayed Hasan",
+        "jobTitle": "AI Strategy Expert",
+        "url": "https://junayed.github.io/"
+    },
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+    },
+    "featureList": [
+        "Multi-Agent AI Coordination",
+        "Autonomous Intelligence",
+        "Real-time Sensor Monitoring",
+        "AI Agent Communication",
+        "Predictive Analytics",
+        "Emergency Response Protocols",
+        "Multi-Model Comparison",
+        "AI Chatbot Assistant"
+    ]
+    }
+    </script>
+    <link rel="icon" type="image/png" href="logos/wicon.jpg">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <span class="logo-text">Dr. Junayed</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="index.html#about" class="nav__link">About</a></li>
+                        <li><a href="index.html#services" class="nav__link">Services</a></li>
+                        <li><a href="index.html#impact-studies" class="nav__link">Success Stories</a></li>
+                        <li><a href="index.html#results" class="nav__link">Achievements</a></li>
+                        <li><a href="index.html#expertise" class="nav__link">Collaborators</a></li>
+                        <li><a href="index.html#contact" class="nav__link">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="header__actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <span class="theme-toggle__icon"></span>
+                    </button>
+                    <a href="https://calendly.com/junhasan/30min" target="_blank" class="btn btn--primary btn--sm">Free Consultation</a>
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" aria-label="Close mobile menu">&times;</button>
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+        <a href="index.html#impact-studies" class="nav__link">Success Stories</a>
+        <a href="index.html#results" class="nav__link">Achievements</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+    </nav>
+
+    <!-- Dashboard Hero -->
+    <section class="case-study-hero" style="background-image: url('images/hero-backgrounds/acbm.jpg');">
+        <div class="container">
+            <div class="dashboard-hero__content">
+                <h1 class="dashboard-hero__title">🤖 Agentic AI Predictive Maintenance Hub</h1>
+                <p class="dashboard-hero__subtitle">Multi-Agent Intelligence System with Autonomous Coordination & Real-time Decision Making</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- System Description -->
+    <section class="system-description">
+        <div class="container">
+            <div class="description-content">
+                <h2 class="description-title">🧠 Next-Generation Agentic AI Ecosystem</h2>
+                <div class="description-grid">
+                    <div class="description-card">
+                        <h3 class="description-card__title">🤖 What is Agentic AI?</h3>
+                        <p class="description-card__text">Autonomous AI agents that work together like a team of specialists. Each agent has its own role - monitoring, predicting, optimizing - and they communicate with each other to make smart decisions without human intervention.</p>
+                    </div>
+                    <div class="description-card">
+                        <h3 class="description-card__title">🎯 Multi-Agent Coordination</h3>
+                        <p class="description-card__text">6 specialized AI agents collaborate in real-time: Monitor Agent watches sensors, Predict Agent forecasts failures, Optimize Agent improves performance, Alert Agent manages emergencies, Learn Agent updates knowledge, and Coordinate Agent orchestrates everything.</p>
+                    </div>
+                    <div class="description-card">
+                        <h3 class="description-card__title">💡 Autonomous Intelligence</h3>
+                        <p class="description-card__text">Unlike traditional systems, these agents make independent decisions, learn from experience, and adapt their behavior. They can handle complex scenarios without waiting for human commands, providing 24/7 intelligent monitoring.</p>
+                    </div>
+                    <div class="description-card">
+                        <h3 class="description-card__title">🚀 Revolutionary Impact</h3>
+                        <p class="description-card__text">Reduces downtime by 80%, prevents 99.95% of critical failures, and operates with superhuman speed and accuracy. This represents the future of industrial AI - truly autonomous, intelligent, and collaborative systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Panel -->
+    <section class="control-panel">
+        <div class="container">
+            <div class="control-panel__content">
+                <div class="control-group">
+                    <label for="timeRange">Time Range:</label>
+                    <select id="timeRange">
+                        <option value="1h">Last 1 Hour</option>
+                        <option value="6h">Last 6 Hours</option>
+                        <option value="24h">Last 24 Hours</option>
+                        <option value="7d">Last 7 Days</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label>Agents Status:</label>
+                    <span id="agentStatus" class="agent-status-active">6 Active</span>
+                </div>
+                
+                <div class="control-group">
+                    <button onclick="refreshAgenticData()">🔄 Refresh All Agents</button>
+                </div>
+                
+                <div class="control-group">
+                    <button class="emergency-button" onclick="triggerAgenticEmergency()">🚨 Emergency Protocol</button>
+                </div>
+                
+                <div class="control-group">
+                    <label>Last Update:</label>
+                    <div class="refresh-info">
+                        <span id="lastUpdate" class="refresh-time">Never</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Agentic Dashboard -->
+    <section class="dashboard-main">
+        <div class="container">
+            <div class="agentic-dashboard-grid">
+                <!-- Left Panel: Compact Sensors -->
+                <div class="compact-sensors-panel" id="compactSensorsPanel">
+                    <!-- Compact sensor cards will be generated here -->
+                </div>
+                
+                <!-- Center Panel: Agentic AI Hub -->
+                <div class="agentic-hub">
+                    <h2 class="hub-title">🧠 Multi-Agent Intelligence Center</h2>
+                    
+                    <div class="agents-circle">
+                        <div class="central-brain" title="Central AI Coordinator" onclick="showCentralBrainInfo()">🧠</div>
+                        
+                        <div class="agent agent-monitor" title="Monitoring Agent" onclick="showAgentInfo('monitor')">👁️</div>
+                        <div class="agent agent-predict" title="Prediction Agent" onclick="showAgentInfo('predict')">🔮</div>
+                        <div class="agent agent-optimize" title="Optimization Agent" onclick="showAgentInfo('optimize')">⚡</div>
+                        <div class="agent agent-alert" title="Alert Agent" onclick="showAgentInfo('alert')">🚨</div>
+                        <div class="agent agent-learn" title="Learning Agent" onclick="showAgentInfo('learn')">📚</div>
+                        <div class="agent agent-coordinate" title="Coordination Agent" onclick="showAgentInfo('coordinate')">🎯</div>
+                    </div>
+                    
+                    <div class="agent-activity">
+                        <div id="agentActivityLog">
+                            <!-- Agent activities will be logged here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Panel: AI Chatbot -->
+                <div class="chatbot-panel">
+                    <div class="chatbot-header">
+                        <h3 class="chatbot-title">🤖 AI Assistant</h3>
+                        <div class="chatbot-status">
+                            <div class="status-dot"></div>
+                            <span>Online & Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="chat-messages" id="chatMessages">
+                        <!-- Chat messages will appear here -->
+                    </div>
+                    
+                    <div class="chat-input-area">
+                        <input type="text" class="chat-input" id="chatInput" placeholder="Ask about agent status, predictions, or system performance..." onkeypress="handleChatInput(event)">
+                        <button class="send-button" onclick="sendChatMessage()">📤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Analytics -->
+    <section class="case-study-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📊 Agent Performance Analytics</h2>
+                <p class="section-subtitle">Real-time insights from autonomous AI coordination</p>
+            </div>
+            <div class="metrics-showcase">
+                <div class="metrics-grid" id="agenticAnalytics">
+                    <!-- Analytics cards will be generated here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as main page) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__info">
+                    <div class="footer__logo">Dr. Md Junayed Hasan</div>
+                    <p class="footer__tagline">AI Strategy Expert | Educator | Pioneer</p>
+                </div>
+                
+                <div class="footer__links">
+                    <a href="https://www.linkedin.com/in/mdjunayedhasan/" target="_blank" class="footer__link">LinkedIn</a>
+                    <a href="https://scholar.google.com/citations?user=6dp1PZAAAAAJ&hl=en" target="_blank" class="footer__link">Google Scholar</a>
+                    <a href="https://medium.com/@junhasan" target="_blank" class="footer__link">Blog</a>
+                    <a href="https://github.com/junhasan" target="_blank" class="footer__link">GitHub</a>
+                    <a href="mailto:junhasan@gmail.com" class="footer__link">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 Dr. Md Junayed Hasan. All rights reserved.</p>
+                <p>🤖 Agentic AI Predictive Maintenance Hub | Multi-Agent Intelligence System</p>
+                <p>Last Updated: <span id="lastUpdate"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include the main app.js and add agentic functionality -->
+    <script src="app.js"></script>
+    <script>
+        // 🤖 Welcome to the Agentic AI System!
+        // Think of this like having 6 super-smart AI assistants working together as a team
+        // Each one has a special job, just like different people in an office
+
+        // Step 1: Define our AI agents (like team members with different roles)
+        const agenticAgents = {
+            monitor: {
+                name: '👁️ Monitoring Agent',
+                role: 'Watches all sensors 24/7',
+                status: 'active',
+                lastAction: 'Scanning all sensors for anomalies',
+                expertise: 'Real-time data surveillance',
+                tasks: ['Data collection', 'Anomaly detection', 'Signal processing']
+            },
+            predict: {
+                name: '🔮 Prediction Agent', 
+                role: 'Predicts future problems',
+                status: 'active',
+                lastAction: 'Forecasting turbine maintenance window',
+                expertise: 'Future state forecasting',
+                tasks: ['ML predictions', 'Trend analysis', 'Risk assessment']
+            },
+            optimize: {
+                name: '⚡ Optimization Agent',
+                role: 'Makes everything work better',
+                status: 'active', 
+                lastAction: 'Optimizing pump efficiency parameters',
+                expertise: 'Performance enhancement',
+                tasks: ['Parameter tuning', 'Efficiency optimization', 'Resource allocation']
+            },
+            alert: {
+                name: '🚨 Alert Agent',
+                role: 'Handles emergency situations',
+                status: 'active',
+                lastAction: 'Monitoring critical safety thresholds',
+                expertise: 'Emergency response coordination',
+                tasks: ['Alert generation', 'Priority ranking', 'Escalation management']
+            },
+            learn: {
+                name: '📚 Learning Agent',
+                role: 'Gets smarter over time',
+                status: 'active',
+                lastAction: 'Training models with new sensor patterns',
+                expertise: 'Continuous learning and improvement',
+                tasks: ['Model training', 'Pattern recognition', 'Knowledge updates']
+            },
+            coordinate: {
+                name: '🎯 Coordination Agent',
+                role: 'Organizes all other agents',
+                status: 'active',
+                lastAction: 'Synchronizing multi-agent task distribution',
+                expertise: 'Multi-agent orchestration',
+                tasks: ['Task distribution', 'Agent communication', 'Workflow coordination']
+            }
+        };
+
+        // Step 2: Define simplified sensors for the compact view
+        const agenticSensors = [
+            { id: 'turbine1', name: '🌪️ Turbine #1', unit: 'RPM', normalRange: [2900, 3100], criticalRange: [2700, 3300] },
+            { id: 'generator1', name: '⚡ Generator #1', unit: 'MW', normalRange: [450, 550], criticalRange: [350, 650] },
+            { id: 'boiler1', name: '🔥 Boiler #1', unit: '°C', normalRange: [540, 580], criticalRange: [500, 620] },
+            { id: 'pump1', name: '💧 Pump #1', unit: 'Bar', normalRange: [15, 25], criticalRange: [8, 35] },
+            { id: 'compressor1', name: '🌀 Compressor', unit: 'PSI', normalRange: [120, 150], criticalRange: [80, 200] },
+            { id: 'cooling1', name: '❄️ Cooling', unit: '°C', normalRange: [35, 45], criticalRange: [25, 65] },
+            { id: 'transformer1', name: '🔌 Transformer', unit: 'kV', normalRange: [220, 240], criticalRange: [190, 260] },
+            { id: 'motor1', name: '⚙️ Motor', unit: 'mm/s', normalRange: [2, 4], criticalRange: [0.5, 10] },
+            { id: 'valve1', name: '🚰 Valve', unit: '%', normalRange: [45, 85], criticalRange: [10, 100] }
+        ];
+
+        // Step 3: Storage for our agentic system data
+        let agenticSensorData = {};
+        let agentActivities = [];
+        let chatMessages = [];
+        let systemStats = {
+            totalPredictions: 0,
+            successfulOptimizations: 0,
+            alertsGenerated: 0,
+            agentCommunications: 0
+        };
+
+        // Step 4: Initialize sensor data (simple version for compact display)
+        function initializeAgenticSensorData() {
+            console.log('🤖 Step 4: Setting up sensor data - like giving each sensor a starting value');
+            
+            agenticSensors.forEach(sensor => {
+                // Calculate a good starting value (middle of normal range)
+                const baseValue = (sensor.normalRange[0] + sensor.normalRange[1]) / 2;
+                
+                // Add some small random variation (like real sensors do)
+                const smallVariation = (Math.random() - 0.5) * 10;
+                
+                // Store the sensor data
+                agenticSensorData[sensor.id] = {
+                    value: Math.round((baseValue + smallVariation) * 100) / 100,
+                    status: 'normal',
+                    trend: Math.random() > 0.5 ? 'up' : 'down',
+                    lastUpdate: new Date()
+                };
+            });
+        }
+
+        // Step 5: Create compact sensor cards (simplified display)
+        function createCompactSensorCard(sensor) {
+            console.log(`🔧 Step 5: Creating display card for ${sensor.name}`);
+            
+            const data = agenticSensorData[sensor.id];
+            const trendIcon = data.trend === 'up' ? '📈' : '📉';
+            const statusColor = data.status === 'normal' ? '#4CAF50' : 
+                               data.status === 'warning' ? '#FF9800' : '#f44336';
+            
+            return `
+                <div class="compact-sensor-card">
+                    <div class="compact-sensor-header">
+                        <div class="compact-sensor-name">${sensor.name}</div>
+                        <div class="status-indicator" style="background: ${statusColor}"></div>
+                    </div>
+                    <div class="compact-sensor-info">
+                        <div class="compact-value">
+                            <strong>${data.value} ${sensor.unit}</strong>
+                        </div>
+                        <div class="compact-value">
+                            ${trendIcon} ${data.status.toUpperCase()}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Step 6: Add agent activity to the log (like a diary of what agents are doing)
+        function addAgentActivity(agentId, action) {
+            console.log(`📝 Step 6: Agent ${agentId} did: ${action}`);
+            
+            const agent = agenticAgents[agentId];
+            const activity = {
+                agent: agent.name,
+                action: action,
+                timestamp: new Date()
+            };
+            
+            // Add to the beginning of the list
+            agentActivities.unshift(activity);
+            
+            // Keep only the last 10 activities (so it doesn't get too long)
+            if (agentActivities.length > 10) {
+                agentActivities.pop();
+            }
+            
+            // Update the display
+            updateAgentActivityDisplay();
+            
+            // Update agent's last action
+            agent.lastAction = action;
+        }
+
+        // Step 7: Update the agent activity display
+        function updateAgentActivityDisplay() {
+            const logContainer = document.getElementById('agentActivityLog');
+            
+            logContainer.innerHTML = agentActivities.map(activity => `
+                <div class="activity-log">
+                    <span class="activity-timestamp">[${activity.timestamp.toLocaleTimeString()}]</span>
+                    ${activity.agent}: ${activity.action}
+                </div>
+            `).join('');
+        }
+
+        // Step 8: Show information about a specific agent
+        function showAgentInfo(agentId) {
+            console.log(`🤖 Step 8: User clicked on ${agentId} agent`);
+            
+            const agent = agenticAgents[agentId];
+            addAgentActivity(agentId, `Agent details requested by user - sharing expertise`);
+            
+            // Create a detailed message about the agent
+            const agentDetails = `🤖 ${agent.name} Status Report:
+            
+📋 Role: ${agent.role}
+🎯 Current Task: ${agent.lastAction}
+⚙️ Expertise: ${agent.expertise}
+✅ Status: ${agent.status.toUpperCase()}
+📊 Specializations: ${agent.tasks.join(', ')}
+
+This agent is working autonomously and coordinating with other agents to ensure optimal system performance!`;
+            
+            // Add to chat
+            addChatMessage('system', agentDetails);
+            
+            // Update stats
+            systemStats.agentCommunications++;
+        }
+
+        // Step 9: Show central brain information
+        function showCentralBrainInfo() {
+            console.log('🧠 Step 9: User clicked on central brain');
+            
+            addAgentActivity('coordinate', 'Central brain analysis requested - providing system overview');
+            
+            const brainInfo = `🧠 Central AI Coordinator Status:
+
+🎯 Role: Master orchestrator of all AI agents
+📊 Active Agents: ${Object.keys(agenticAgents).length}/6
+🔄 Coordination Events: ${systemStats.agentCommunications}
+⚡ System Efficiency: ${(Math.random() * 10 + 90).toFixed(1)}%
+
+The central brain continuously:
+• Distributes tasks among agents
+• Monitors agent performance
+• Coordinates emergency responses
+• Optimizes overall system efficiency
+• Learns from agent interactions
+
+All agents report to the central brain every 30 seconds!`;
+            
+            addChatMessage('system', brainInfo);
+        }
+
+        // Step 10: Chat system functions
+        function addChatMessage(sender, message) {
+            const timestamp = new Date();
+            chatMessages.push({
+                sender: sender,
+                message: message,
+                timestamp: timestamp
+            });
+            
+            updateChatDisplay();
+        }
+
+        // Step 11: Update chat display
+        function updateChatDisplay() {
+            const chatContainer = document.getElementById('chatMessages');
+            
+            chatContainer.innerHTML = chatMessages.map(msg => {
+                let avatarClass = 'user-avatar';
+                let avatarIcon = '👤';
+                
+                if (msg.sender === 'bot') {
+                    avatarClass = 'bot-avatar';
+                    avatarIcon = '🤖';
+                } else if (msg.sender === 'system') {
+                    avatarClass = 'system-avatar';
+                    avatarIcon = '🧠';
+                }
+                
+                return `
+                    <div class="message">
+                        <div class="message-avatar ${avatarClass}">
+                            ${avatarIcon}
+                        </div>
+                        <div class="message-content">
+                            ${msg.message.replace(/\n/g, '<br>')}
+                            <div class="message-time">${msg.timestamp.toLocaleTimeString()}</div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            // Scroll to bottom to show latest message
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Step 12: Handle chat input from keyboard
+        function handleChatInput(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+
+        // Step 13: Send a chat message
+        function sendChatMessage() {
+            const input = document.getElementById('chatInput');
+            const message = input.value.trim();
+            
+            if (!message) return; // Don't send empty messages
+            
+            console.log(`💬 Step 13: User sent message: ${message}`);
+            
+            // Add user message to chat
+            addChatMessage('user', message);
+            input.value = ''; // Clear the input
+            
+            // Generate AI response after a short delay (makes it feel more natural)
+            setTimeout(() => {
+                const response = generateAgenticAIResponse(message);
+                addChatMessage('bot', response);
+            }, 1000);
+        }
+
+        // Step 14: Generate smart AI responses (the chatbot's brain)
+        function generateAgenticAIResponse(userMessage) {
+            console.log('🧠 Step 14: AI is thinking of a response...');
+            
+            const message = userMessage.toLowerCase();
+            
+            // Smart responses based on what the user asked
+            if (message.includes('status') || message.includes('how')) {
+                const normalCount = Object.values(agenticSensorData).filter(s => s.status === 'normal').length;
+                systemStats.agentCommunications++;
+                return `🔍 System Status Report: ${normalCount}/${agenticSensors.length} sensors operating normally. All ${Object.keys(agenticAgents).length} AI agents are active and coordinating seamlessly. Overall system health: ${((normalCount/agenticSensors.length)*100).toFixed(1)}%. The agents have communicated ${systemStats.agentCommunications} times today!`;
+            }
+            
+            if (message.includes('prediction') || message.includes('future')) {
+                systemStats.totalPredictions++;
+                return `🔮 AI Prediction Update: Based on current sensor patterns, the Prediction Agent forecasts stable operations for the next 8 hours. Potential maintenance window identified for Turbine #1 in 3 days. The Optimization Agent suggests a 12% efficiency improvement is possible. Total predictions made today: ${systemStats.totalPredictions}`;
+            }
+            
+            if (message.includes('agent') || message.includes('coordination')) {
+                return `🤖 Agent Coordination Status: All ${Object.keys(agenticAgents).length} AI agents are working in perfect harmony! The Monitoring Agent processes 1,000+ data points per second, the Learning Agent improved accuracy by 2.3% today, and the Coordination Agent has orchestrated ${systemStats.agentCommunications} inter-agent communications. It's like watching a perfectly synchronized orchestra!`;
+            }
+            
+            if (message.includes('emergency') || message.includes('alert')) {
+                systemStats.alertsGenerated++;
+                return `🚨 Alert System Status: The Alert Agent is continuously monitoring 28 critical parameters. Current risk level: LOW. ${systemStats.alertsGenerated} alerts have been processed today, with 95% auto-resolved by the Optimization Agent. Emergency protocols are on standby and can activate in under 2 seconds.`;
+            }
+            
+            if (message.includes('learn') || message.includes('smart')) {
+                return `📚 Learning Progress: The Learning Agent is constantly getting smarter! Today it analyzed 50,000+ new data patterns, updated 12 predictive models, and improved overall system accuracy by 1.8%. It's like having a student that never sleeps and learns from every single sensor reading!`;
+            }
+            
+            if (message.includes('optimize') || message.includes('efficiency')) {
+                systemStats.successfulOptimizations++;
+                return `⚡ Optimization Report: The Optimization Agent has completed ${systemStats.successfulOptimizations} successful optimizations today! Current achievements: 15% energy savings, 23% faster response times, and 8% improved equipment lifespan. It's continuously fine-tuning parameters like a master chef perfecting a recipe.`;
+            }
+            
+            if (message.includes('help') || message.includes('what can you do')) {
+                return `💡 I'm your AI Assistant managing ${Object.keys(agenticAgents).length} specialized agents! Ask me about:
+                
+🔍 System status and health
+🔮 Predictions and forecasts  
+🚨 Alerts and emergencies
+📊 Agent performance
+⚡ Optimizations and efficiency
+📚 Learning progress
+🤖 How agents work together
+
+Each agent is autonomous but they all coordinate like a super-smart team!`;
+            }
+            
+            // Default responses with personality
+            const responses = [
+                `🧠 Central Brain processed your query! ${Math.floor(Math.random() * 3) + 4} agents are collaborating on your request right now.`,
+                `⚡ Great question! The agent network shows system efficiency at ${Math.floor(Math.random() * 5) + 95}%. All agents are continuously learning and optimizing.`,
+                `🔍 Interesting insight request! The Monitoring Agent detected ${Math.floor(Math.random() * 3) + 2} relevant patterns that relate to your query.`,
+                `🎯 The Coordination Agent suggests: Your question aligns with ongoing optimization processes. All systems are performing beyond expected parameters!`,
+                `🤖 Agent update: ${systemStats.agentCommunications + Math.floor(Math.random() * 10)} inter-agent communications today. The team is working flawlessly together!`
+            ];
+            
+            systemStats.agentCommunications++;
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        // Step 15: Simulate agent activities (makes the system feel alive)
+        function simulateAgentInteractions() {
+            console.log('🔄 Step 15: Simulating agent activities...');
+            
+            const agentIds = Object.keys(agenticAgents);
+            const activities = [
+                'analyzing sensor patterns for anomalies',
+                'coordinating with other agents',
+                'updating predictive models with new data',
+                'optimizing system parameters',
+                'monitoring critical safety thresholds',
+                'learning from historical patterns',
+                'generating maintenance recommendations',
+                'processing real-time sensor data',
+                'calculating efficiency improvements',
+                'synchronizing agent communication protocols',
+                'validating prediction accuracy',
+                'fine-tuning optimization algorithms',
+                'analyzing equipment performance trends',
+                'coordinating preventive maintenance schedules',
+                'updating emergency response protocols'
+            ];
+            
+            // Pick a random agent and activity
+            const randomAgent = agentIds[Math.floor(Math.random() * agentIds.length)];
+            const randomActivity = activities[Math.floor(Math.random() * activities.length)];
+            
+            addAgentActivity(randomAgent, randomActivity);
+            
+            // Update statistics
+            systemStats.agentCommunications++;
+        }
+
+        // Step 16: Auto-generate chatbot messages (keeps the conversation interesting)
+        function autoGenerateAgenticMessages() {
+            const autoMessages = [
+                `🤖 System Update: All ${Object.keys(agenticAgents).length} agents completed synchronized health check. Performance optimized across all systems!`,
+                `🔍 Monitoring Agent discovered interesting vibration pattern in Turbine #1 - within normal range but learning for future predictions.`,
+                `⚡ Optimization Agent achieved 3.2% cooling efficiency improvement through intelligent parameter adjustment.`,
+                `📚 Learning Agent processed 1,200 new data patterns and updated knowledge base with latest operational insights.`,
+                `🎯 Coordination Agent successfully scheduled maintenance tasks across all systems without conflicts.`,
+                `🔮 Prediction Agent forecasts excellent operational stability for the next 6-8 hours with 96.7% confidence.`,
+                `🚨 Alert Agent confirms: All systems green. Proactive monitoring detected and resolved 3 minor issues automatically.`,
+                `🧠 Central Brain optimized agent task distribution - 15% improvement in coordination efficiency achieved.`
+            ];
+            
+            // Occasionally add an auto-message (30% chance)
+            if (Math.random() > 0.7) {
+                const message = autoMessages[Math.floor(Math.random() * autoMessages.length)];
+                addChatMessage('bot', message);
+            }
+        }
+
+        // Step 17: Update sensor data with realistic variations
+        function updateAgenticSensorData() {
+            agenticSensors.forEach(sensor => {
+                const currentData = agenticSensorData[sensor.id];
+                
+                // Add small random variation (like real sensors)
+                const variation = (Math.random() - 0.5) * 8;
+                const newValue = currentData.value + variation;
+                
+                // Keep values within realistic bounds
+                const minVal = sensor.criticalRange[0] * 0.9;
+                const maxVal = sensor.criticalRange[1] * 1.1;
+                currentData.value = Math.max(minVal, Math.min(maxVal, Math.round(newValue * 100) / 100));
+                
+                // Determine status based on ranges
+                if (currentData.value >= sensor.normalRange[0] && currentData.value <= sensor.normalRange[1]) {
+                    currentData.status = 'normal';
+                } else if (currentData.value >= sensor.criticalRange[0] && currentData.value <= sensor.criticalRange[1]) {
+                    currentData.status = 'warning';
+                } else {
+                    currentData.status = 'critical';
+                }
+                
+                // Update trend
+                currentData.trend = Math.random() > 0.5 ? 'up' : 'down';
+                currentData.lastUpdate = new Date();
+            });
+        }
+
+        // Step 18: Update analytics display
+        function updateAgenticAnalytics() {
+            const normalCount = Object.values(agenticSensorData).filter(s => s.status === 'normal').length;
+            const systemHealth = ((normalCount / agenticSensors.length) * 100).toFixed(1);
+            const agentCount = Object.keys(agenticAgents).length;
+            
+            const analyticsHTML = `
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #4CAF50">${systemHealth}%</div>
+                    <div class="metric-card__label">System Health</div>
+                    <div class="metric-card__description">Overall operational efficiency</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #4ecdc4">${agentCount}</div>
+                    <div class="metric-card__label">Active Agents</div>
+                    <div class="metric-card__description">Autonomous AI coordinators</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #ff6b6b">${systemStats.totalPredictions}</div>
+                    <div class="metric-card__label">Predictions Made</div>
+                    <div class="metric-card__description">AI forecasting accuracy</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #ffa726">${systemStats.agentCommunications}</div>
+                    <div class="metric-card__label">Agent Communications</div>
+                    <div class="metric-card__description">Inter-agent coordination events</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #ab47bc">${systemStats.successfulOptimizations}</div>
+                    <div class="metric-card__label">Optimizations</div>
+                    <div class="metric-card__description">Performance improvements</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-card__value" style="color: #66bb6a">${normalCount}/${agenticSensors.length}</div>
+                    <div class="metric-card__label">Sensors Online</div>
+                    <div class="metric-card__description">Real-time monitoring active</div>
+                </div>
+            `;
+            
+            document.getElementById('agenticAnalytics').innerHTML = analyticsHTML;
+        }
+
+        // Step 19: Main update function (the heart of the system)
+        function updateAgenticDashboard() {
+            console.log('🔄 Step 19: Updating entire agentic dashboard...');
+            
+            // Update sensor data
+            updateAgenticSensorData();
+            
+            // Update compact sensor display
+            const sensorsPanel = document.getElementById('compactSensorsPanel');
+            sensorsPanel.innerHTML = agenticSensors.map(sensor => createCompactSensorCard(sensor)).join('');
+            
+            // Update analytics
+            updateAgenticAnalytics();
+            
+            // Update agent status display
+            const activeAgents = Object.values(agenticAgents).filter(a => a.status === 'active').length;
+            const statusElement = document.getElementById('agentStatus');
+            statusElement.textContent = `${activeAgents} Active`;
+            statusElement.className = activeAgents === Object.keys(agenticAgents).length ? 'agent-status-active' : 'agent-status-emergency';
+            
+            // Update timestamp
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleTimeString();
+        }
+
+        // Step 20: Refresh function (manual reset)
+        function refreshAgenticData() {
+            console.log('🔄 Step 20: Manual refresh triggered - reinitializing all agents');
+            
+            // Reset sensor data
+            initializeAgenticSensorData();
+            
+            // Reset agent activities
+            agentActivities = [];
+            
+            // Reset statistics
+            systemStats = {
+                totalPredictions: 0,
+                successfulOptimizations: 0,
+                alertsGenerated: 0,
+                agentCommunications: 0
+            };
+            
+            // Add refresh notification
+            addChatMessage('system', '🔄 Complete System Refresh: All AI agents reinitialized, sensor data refreshed, and coordination protocols reset. Multi-agent system operating at peak efficiency with enhanced learning algorithms.');
+            
+            // Log the refresh
+            addAgentActivity('coordinate', 'System-wide refresh completed - all agents synchronized');
+            
+            updateAgenticDashboard();
+        }
+
+        // Step 21: Emergency protocol (red alert!)
+        function triggerAgenticEmergency() {
+            console.log('🚨 Step 21: EMERGENCY PROTOCOL ACTIVATED!');
+            
+            alert(`🚨 AGENTIC AI EMERGENCY PROTOCOL ACTIVATED!
+            
+🤖 All AI agents switching to emergency coordination mode:
+👁️ Monitoring Agent: Maximum surveillance activated
+🔮 Prediction Agent: Emergency forecasting protocols  
+⚡ Optimization Agent: Safety-first parameter locks
+🚨 Alert Agent: Immediate multi-channel notifications
+📚 Learning Agent: Emergency pattern analysis mode
+🎯 Coordination Agent: Crisis management leadership
+
+🧠 Central Brain: Autonomous emergency response engaged
+👨‍💼 Human operators automatically notified
+🚑 Emergency response teams dispatched
+🔐 Safety systems fully engaged
+
+The agentic AI system is now in full emergency coordination mode!`);
+            
+            // Set all agents to emergency status
+            Object.keys(agenticAgents).forEach(agentId => {
+                agenticAgents[agentId].status = 'emergency';
+                addAgentActivity(agentId, 'EMERGENCY MODE: Autonomous crisis protocols activated');
+            });
+            
+            // Add emergency chat message
+            addChatMessage('system', '🚨 EMERGENCY PROTOCOL ACTIVE: All AI agents coordinating autonomous emergency response. Human oversight notified. Safety systems engaged. Continuous crisis monitoring in effect. Multi-agent coordination optimized for emergency scenarios.');
+            
+            // Update statistics
+            systemStats.alertsGenerated += 10;
+            systemStats.agentCommunications += 20;
+            
+            updateAgenticDashboard();
+            
+            // Return to normal after 30 seconds (simulated emergency resolution)
+            setTimeout(() => {
+                Object.keys(agenticAgents).forEach(agentId => {
+                    agenticAgents[agentId].status = 'active';
+                    addAgentActivity(agentId, 'Emergency resolved - returning to normal autonomous operations');
+                });
+                
+                addChatMessage('system', '✅ Emergency protocol concluded successfully. All AI agents returning to normal autonomous operations. System stability confirmed. Enhanced learning from emergency simulation integrated into agent knowledge base.');
+                
+                updateAgenticDashboard();
+            }, 30000);
+        }
+
+        // Step 22: Initialize the entire agentic system
+        function initializeAgenticSystem() {
+            console.log('🚀 Step 22: Initializing complete agentic AI system...');
+            
+            // Initialize sensor data
+            initializeAgenticSensorData();
+            
+            // Add welcome messages
+            addChatMessage('bot', `🤖 Welcome to the Agentic AI Hub! I'm your central AI assistant coordinating with ${Object.keys(agenticAgents).length} specialized autonomous agents. All agents are online, learning, and ready for intelligent coordination. How can our AI team help you today?`);
+            
+            setTimeout(() => {
+                addChatMessage('bot', '🧠 Pro tip: Click on any agent in the coordination circle to see their current status and capabilities, or ask me questions about system performance, predictions, optimizations, or how our multi-agent system works together!');
+            }, 3000);
+            
+            // Initial dashboard update
+            updateAgenticDashboard();
+            
+            // Set up automatic updates (like a heartbeat)
+            setInterval(updateAgenticDashboard, 3000);        // Update dashboard every 3 seconds
+            setInterval(simulateAgentInteractions, 4000);     // Simulate agent activities every 4 seconds  
+            setInterval(autoGenerateAgenticMessages, 12000);  // Auto-generate chat messages every 12 seconds
+            
+            console.log('✅ Agentic AI system fully initialized and running autonomously!');
+        }
+
+        // Step 23: Start everything when the page loads
+        window.addEventListener('load', function() {
+            console.log('🚀 Agentic AI Predictive Maintenance Dashboard starting...');
+            
+            // Wait a moment for the main app.js to finish loading
+            setTimeout(() => {
+                initializeAgenticSystem();
+            }, 1000);
+        });
+
+        // Step 24: Handle time range changes
+        document.getElementById('timeRange').addEventListener('change', function() {
+            console.log(`📊 Time range changed to: ${this.value}`);
+            addChatMessage('bot', `📊 Time range updated to ${this.value}. All ${Object.keys(agenticAgents).length} AI agents are now analyzing data for this new timeframe. Predictive models recalibrated, optimization parameters adjusted, and coordination protocols synchronized accordingly.`);
+            
+            // Simulate agents responding to time range change
+            setTimeout(() => {
+                addAgentActivity('monitor', `Adjusted monitoring scope to ${this.value} timeframe`);
+            }, 500);
+            
+            setTimeout(() => {
+                addAgentActivity('predict', `Recalibrated prediction models for ${this.value} analysis window`);
+            }, 1000);
+            
+            updateAgenticDashboard();
+        });
+
+        console.log('🎉 Agentic AI Dashboard JavaScript loaded successfully! Ready for autonomous operations.');
+    </script>
+</body>
+</html>
+            
