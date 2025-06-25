@@ -2531,22 +2531,22 @@ section {
 
 .gallery__caption {
   width: 100%;
-  flex: 1 1 0;
-  text-align: justify;
+  /* flex: 1 1 0; */
+  text-align: match-parent;
   background: var(--color-surface, #f9f9f9);
-  padding: 1.25rem 1.5rem;
+  padding: 1rem 1rem;
   font-size: 1rem;
   color: var(--color-text, #222);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   border-top: 1px solid #eee;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   line-height: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  align-items: stretch;
+  justify-content: stretch;
   /* Justify last line */
-  position: relative;
+  position: static;
 }
 .gallery__caption::after {
   content: '';
