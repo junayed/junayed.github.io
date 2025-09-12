@@ -4,9 +4,8 @@
   <url>
     <loc>https://drjunayed.dataxense.co.uk/</loc>
 
+    <!-- Key images -->
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/profile-main.jpg</image:loc><image:caption>Profile — Dr. Md Junayed Hasan</image:caption></image:image>
-
-    <!-- Case studies -->
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/ag.jpg</image:loc><image:caption>Agentic AI case study</image:caption></image:image>
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/xai.jpg</image:loc><image:caption>Explainable AI case study</image:caption></image:image>
 
@@ -25,3 +24,4 @@
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/logos/wicon.jpg</image:loc><image:caption>Site logo</image:caption></image:image>
   </url>
 </urlset>
+
