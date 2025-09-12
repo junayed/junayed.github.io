@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/</loc>
+
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/profile-main.jpg</image:loc><image:caption>Profile — Dr. Md Junayed Hasan</image:caption></image:image>
+
+    <!-- Case studies -->
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/ag.jpg</image:loc><image:caption>Agentic AI case study</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/xai.jpg</image:loc><image:caption>Explainable AI case study</image:caption></image:image>
+
+    <!-- Gallery -->
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-bindt-conference.jpeg</image:loc><image:caption>BINDT 2024 Conference</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-invited-talk.jpeg</image:loc><image:caption>Invited talk on GNN pipeline inspection</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-nztc-expert-talk-aberdeen.jpeg</image:loc><image:caption>NZTC expert talk, Aberdeen</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oceaneering.jpeg</image:loc><image:caption>Oceaneering collaboration</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oxford-university.jpeg</image:loc><image:caption>At University of Oxford</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-phd-defense.jpg</image:loc><image:caption>PhD defense — University of Ulsan</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-subseaexpo223-invited-talk.jpeg</image:loc><image:caption>Subsea Expo 2023 invited talk</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-uiai-team.jpg</image:loc><image:caption>UIAI team</image:caption></image:image>
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-university-of-ulsan-phd.jpeg</image:loc><image:caption>University of Ulsan — PhD award</image:caption></image:image>
+
+    <!-- Logo -->
+    <image:image><image:loc>https://drjunayed.dataxense.co.uk/logos/wicon.jpg</image:loc><image:caption>Site logo</image:caption></image:image>
+  </url>
+</urlset>
