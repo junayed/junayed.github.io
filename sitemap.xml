@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
   <url>
     <loc>https://drjunayed.dataxense.co.uk/</loc>
+    <lastmod>2025-09-12</lastmod>
 
     <!-- Key images -->
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/profile-main.jpg</image:loc><image:caption>Profile — Dr. Md Junayed Hasan</image:caption></image:image>
@@ -23,6 +26,36 @@
     <!-- Logo -->
     <image:image><image:loc>https://drjunayed.dataxense.co.uk/logos/wicon.jpg</image:loc><image:caption>Site logo</image:caption></image:image>
   </url>
+
+  <!-- Posts (new, for fastest indexing) -->
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/posts/library-mystery-ai-finds-answers.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/posts/rag-two-humans.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/posts/coffee-time-universe-ai.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/posts/bindt-2024-conference.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+
+  <!-- Optional: your case study pages -->
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/case1.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+  <url>
+    <loc>https://drjunayed.dataxense.co.uk/case2.html</loc>
+    <lastmod>2025-09-12</lastmod>
+  </url>
+
 </urlset>
+
 
 
