@@ -5,29 +5,81 @@
   <!-- Home -->
   <url>
     <loc>https://drjunayed.dataxense.co.uk/</loc>
-    <lastmod>2025-09-12</lastmod>
+    <lastmod>2025-09-14</lastmod>
 
     <!-- Key images -->
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/profile-main.jpg</image:loc><image:caption>Profile — Dr. Md Junayed Hasan</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/ag.jpg</image:loc><image:caption>Agentic AI case study</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/xai.jpg</image:loc><image:caption>Explainable AI case study</image:caption></image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/profile-main.jpg</image:loc>
+      <image:title>Dr. Md Junayed Hasan — Profile</image:title>
+      <image:caption>Profile — Dr. Md Junayed Hasan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/ag.jpg</image:loc>
+      <image:title>Agentic AI case study</image:title>
+      <image:caption>Agentic AI case study</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/case-studies/xai.jpg</image:loc>
+      <image:title>Explainable AI case study</image:title>
+      <image:caption>Explainable AI case study</image:caption>
+    </image:image>
 
     <!-- Gallery -->
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-bindt-conference.jpeg</image:loc><image:caption>BINDT 2024 Conference</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-invited-talk.jpeg</image:loc><image:caption>Invited talk on GNN pipeline inspection</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-nztc-expert-talk-aberdeen.jpeg</image:loc><image:caption>NZTC expert talk, Aberdeen</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oceaneering.jpeg</image:loc><image:caption>Oceaneering collaboration</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oxford-university.jpeg</image:loc><image:caption>At University of Oxford</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-phd-defense.jpg</image:loc><image:caption>PhD defense — University of Ulsan</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-subseaexpo223-invited-talk.jpeg</image:loc><image:caption>Subsea Expo 2023 invited talk</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-uiai-team.jpg</image:loc><image:caption>UIAI team</image:caption></image:image>
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-university-of-ulsan-phd.jpeg</image:loc><image:caption>University of Ulsan — PhD award</image:caption></image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-bindt-conference.jpeg</image:loc>
+      <image:title>BINDT 2024 Conference</image:title>
+      <image:caption>BINDT 2024 Conference</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-invited-talk.jpeg</image:loc>
+      <image:title>Invited talk on GNN pipeline inspection</image:title>
+      <image:caption>Invited talk on GNN pipeline inspection</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-nztc-expert-talk-aberdeen.jpeg</image:loc>
+      <image:title>NZTC expert talk, Aberdeen</image:title>
+      <image:caption>NZTC expert talk, Aberdeen</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oceaneering.jpeg</image:loc>
+      <image:title>Oceaneering collaboration</image:title>
+      <image:caption>Oceaneering collaboration</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-oxford-university.jpeg</image:loc>
+      <image:title>At University of Oxford</image:title>
+      <image:caption>At University of Oxford</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-phd-defense.jpg</image:loc>
+      <image:title>PhD defense — University of Ulsan</image:title>
+      <image:caption>PhD defense — University of Ulsan</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-subseaexpo223-invited-talk.jpeg</image:loc>
+      <image:title>Subsea Expo 2023 invited talk</image:title>
+      <image:caption>Subsea Expo 2023 invited talk</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-uiai-team.jpg</image:loc>
+      <image:title>UIAI team</image:title>
+      <image:caption>UIAI team</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/images/gallary/memory-university-of-ulsan-phd.jpeg</image:loc>
+      <image:title>University of Ulsan — PhD award</image:title>
+      <image:caption>University of Ulsan — PhD award</image:caption>
+    </image:image>
 
     <!-- Logo -->
-    <image:image><image:loc>https://drjunayed.dataxense.co.uk/logos/wicon.jpg</image:loc><image:caption>Site logo</image:caption></image:image>
+    <image:image>
+      <image:loc>https://drjunayed.dataxense.co.uk/logos/wicon.jpg</image:loc>
+      <image:title>Site logo</image:title>
+      <image:caption>Site logo</image:caption>
+    </image:image>
   </url>
 
-  <!-- Posts (new, for fastest indexing) -->
+  <!-- Posts (for fastest indexing) -->
   <url>
     <loc>https://drjunayed.dataxense.co.uk/posts/library-mystery-ai-finds-answers.html</loc>
     <lastmod>2025-09-12</lastmod>
@@ -45,7 +97,7 @@
     <lastmod>2025-09-12</lastmod>
   </url>
 
-  <!-- Optional: your case study pages -->
+  <!-- Optional: case study pages -->
   <url>
     <loc>https://drjunayed.dataxense.co.uk/case1.html</loc>
     <lastmod>2025-09-12</lastmod>
@@ -56,6 +108,3 @@
   </url>
 
 </urlset>
-
-
-
