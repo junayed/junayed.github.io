@@ -22,8 +22,8 @@ class PortfolioApp {
         const body = document.body;
         const html = document.documentElement;
 
-        // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        // Check for saved theme preference or default to the premium dark brand mode
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         
         this.setTheme(savedTheme);
 
@@ -65,11 +65,10 @@ class PortfolioApp {
             }, 150);
         }
 
-        // Update header background immediately
+        // Let CSS theme tokens handle the header surface
         const header = document.querySelector('.header');
         if (header) {
-            // Header background is now handled by CSS variables
-            header.style.background = 'var(--color-background)';
+            header.style.background = '';
         }
     }
 
