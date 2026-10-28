@@ -1,4 +1,4 @@
-import{clamp}from'./rules.js';
+import{clamp}from'./rules.js?v=fbce123b9ec4';
 export class Input{
  constructor(actions){this.keys=new Set();this.touch={x:0,y:0,active:false,brake:false,boost:false};this.enabled=false;this.actions=actions;this.stick=document.querySelector('#stick');this.thumb=document.querySelector('#stick-thumb');this.pointer=null;
   addEventListener('keydown',e=>{if(e.target.matches('select,input,button')&&e.code!=='Escape')return;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.repeat)return;this.keys.add(e.code);if(e.code==='Escape')actions.pause();if(!this.enabled)return;if(e.code==='Space'||e.code==='ShiftLeft'||e.code==='ShiftRight')actions.boost?.();if(e.code==='KeyF')actions.attack();if(e.code==='KeyH')actions.horn();if(e.code==='KeyB')actions.taunt();if(e.code==='KeyM')actions.mute();});

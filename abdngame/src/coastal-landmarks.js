@@ -1,6 +1,6 @@
 // Adapted locally from the supplied city source; see PROVENANCE.md.
-import * as T from '../vendor/three.module.js';
-import {COAST} from './coast-data.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import {COAST} from './coast-data.js?v=fbce123b9ec4';
 
 // Location/footprint data: © OpenStreetMap contributors, ODbL.
 // Reference guided, deliberately lightweight architecture, not a surveyed reconstruction.

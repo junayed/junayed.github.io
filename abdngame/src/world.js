@@ -1,9 +1,10 @@
-import * as T from '../vendor/three.module.js';
-import{Batch,material,part,textSign,propModel,createBus}from'./models.js';
-import{buildCollege}from'./college.js';
-import{COLLEGE,HOMES}from'./city-source-data.js';
-import{CollisionWorld,Pathfinder}from'./collision.js';
-import{seeded,districtAt}from'./rules.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import{createChargingBay}from'./charging-bay.js?v=fbce123b9ec4';
+import{Batch,material,part,textSign,propModel,createBus}from'./models.js?v=fbce123b9ec4';
+import{buildCollege}from'./college.js?v=fbce123b9ec4';
+import{COLLEGE,HOMES}from'./city-source-data.js?v=fbce123b9ec4';
+import{CollisionWorld,Pathfinder}from'./collision.js?v=fbce123b9ec4';
+import{seeded,districtAt}from'./rules.js?v=fbce123b9ec4';
 const treeGeo=new T.IcosahedronGeometry(1,1),poleGeo=new T.CylinderGeometry(1,1,1,7);
 export class Town{
  constructor(scene){this.scene=scene;this.collision=new CollisionWorld();this.batch=new Batch(scene);this.random=seeded(5644);this.props=[];this.buildings=[];this.lamps=[];this.charges=[{x:-46,z:-42},{x:-218,z:139},{x:190,z:118}];this.traffic=[];this.gulls=[];
@@ -59,7 +60,7 @@ export class Town{
   for(const x of[-128,-88,-48,30,75,125])for(const z of[28,64])this.addProp('sign',x,z);
   for(let i=0;i<20;i++){const x=20+i*6;this.box('#48565e',x,.5,174,.07,1,.07);this.box('#48565e',x,1,174,4.6,.06,.07);}
  }
- buildChargePoints(){for(const c of this.charges){const group=new T.Group();group.position.set(c.x,0,c.z);part(group,'#55266d',0,1.4,0,1.2,2.8,.65);part(group,'#ffdc19',0,1.8,.36,.9,1,.06);part(group,'#263746',0,1.6,.41,.45,.45,.04);part(group,'#b5e6b1',0,2.75,0,1.3,.15,.75);const sign=textSign('CHARGE',{width:4.3,height:1,bg:'#315c49',fg:'#fff1b4',font:60});sign.position.set(0,4.4,0);group.add(sign);const starShape=new T.Shape();for(let i=0;i<10;i++){const a=Math.PI/2+i*Math.PI/5,r=i%2?.38:.85;i?starShape.lineTo(Math.cos(a)*r,Math.sin(a)*r):starShape.moveTo(Math.cos(a)*r,Math.sin(a)*r);}starShape.closePath();const star=new T.Mesh(new T.ExtrudeGeometry(starShape,{depth:.12,bevelEnabled:false}),new T.MeshBasicMaterial({color:'#ffdc19'}));star.position.set(0,5.9,0);group.add(star);c.star=star;this.scene.add(group);const ring=new T.Mesh(new T.RingGeometry(3.5,4.1,48),new T.MeshBasicMaterial({color:'#bcf58f',side:T.DoubleSide,transparent:true,opacity:.75}));ring.rotation.x=-Math.PI/2;ring.position.set(c.x,.23,c.z+3);this.scene.add(ring);c.ring=ring;c.target={x:c.x,z:c.z+3};}}
+ buildChargePoints(){for(const c of this.charges){const group=new T.Group();group.position.set(c.x,0,c.z);group.rotation.y=c.angle||0;part(group,'#55266d',0,1.4,0,1.2,2.8,.65);part(group,'#ffdc19',0,1.8,.36,.9,1,.06);part(group,'#263746',0,1.6,.41,.45,.45,.04);part(group,'#b5e6b1',0,2.75,0,1.3,.15,.75);const sign=textSign('CHARGE',{width:4.3,height:1,bg:'#315c49',fg:'#fff1b4',font:60});sign.position.set(0,4.4,0);group.add(sign);const starShape=new T.Shape();for(let i=0;i<10;i++){const a=Math.PI/2+i*Math.PI/5,r=i%2?.38:.85;i?starShape.lineTo(Math.cos(a)*r,Math.sin(a)*r):starShape.moveTo(Math.cos(a)*r,Math.sin(a)*r);}starShape.closePath();const star=new T.Mesh(new T.ExtrudeGeometry(starShape,{depth:.12,bevelEnabled:false}),new T.MeshBasicMaterial({color:'#ffdc19'}));star.position.set(0,5.9,0);group.add(star);c.star=star;this.scene.add(group);const ring=new T.Mesh(new T.RingGeometry(3.5,4.1,48),new T.MeshBasicMaterial({color:'#bcf58f',side:T.DoubleSide,transparent:true,opacity:.75}));ring.rotation.x=-Math.PI/2;ring.position.set(c.bayTarget?.x??c.x+Math.sin(c.angle||0)*3,.23,c.bayTarget?.z??c.z+Math.cos(c.angle||0)*3);this.scene.add(ring);c.ring=ring;c.target={x:ring.position.x,z:ring.position.z};c.paint=createChargingBay(c,this.scene);}}
 
  makeGulls(){for(let i=0;i<28;i++){const g=new T.Group();part(g,'#edead8',0,0,0,.3,.14,.55);const wings=[part(g,'#f6f2de',-.45,.06,0,.7,.05,.22),part(g,'#f6f2de',.45,.06,0,.7,.05,.22)];this.scene.add(g);this.gulls.push({mesh:g,wings,phase:i*2.1});}}
  reset(){for(const p of this.props){p.alive=true;p.mesh.visible=true;}this.traffic.forEach((b,i)=>b.d=i*430);}
@@ -67,6 +68,6 @@ export class Town{
  update(time,dt){if(this.water){const a=this.water.geometry.attributes.position;for(let i=0;i<a.count;i++){const x=this.waterBase[i*3],z=this.waterBase[i*3+2];a.array[i*3+1]=Math.sin(x*.09+time*1.2)*.16+Math.cos(z*.13+time*.8)*.09;}a.needsUpdate=true;}this.wheel.rotation.z=time*.025;
   for(const b of this.managedTraffic?[]:this.traffic){b.d+=b.speed*dt;const len=this.busRoute.slice(1).reduce((s,p,i)=>s+Math.hypot(p[0]-this.busRoute[i][0],p[1]-this.busRoute[i][1]),0);let d=b.d%len;for(let i=1;i<this.busRoute.length;i++){const a=this.busRoute[i-1],c=this.busRoute[i],l=Math.hypot(c[0]-a[0],c[1]-a[1]);if(d>l){d-=l;continue;}b.x=a[0]+(c[0]-a[0])*d/l;b.z=a[1]+(c[1]-a[1])*d/l;b.angle=Math.atan2(c[0]-a[0],c[1]-a[1]);b.mesh.position.set(b.x,0,b.z);b.mesh.rotation.y=b.angle;break;}}
   for(const g of this.gulls){const a=time*.11+g.phase;g.mesh.position.set(202+Math.cos(a)*38,18+Math.sin(a*1.8)*3,-40+Math.sin(a)*160);g.mesh.rotation.y=-a;g.wings[0].rotation.z=Math.sin(time*4+g.phase)*.35;g.wings[1].rotation.z=-Math.sin(time*4+g.phase)*.35;}
-  for(const c of this.charges){c.ring.material.opacity=.65+Math.sin(time*2)*.18;if(c.star)c.star.rotation.y=time*.7;}
+  for(const c of this.charges){c.ring.material.opacity=.27+Math.sin(time*2)*.08;if(c.paint)c.paint.material.uniforms.time.value=time;if(c.star)c.star.rotation.y=time*.7;}
  }
 }

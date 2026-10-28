@@ -1,5 +1,5 @@
-import * as T from '../vendor/three.module.js';
-import {part,textSign,material} from './models.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import {part,textSign,material} from './models.js?v=fbce123b9ec4';
 
 // Activity anchors share the ordinary crowd collision and pursuit system.
 export function addNeighbourhoodLife(life){

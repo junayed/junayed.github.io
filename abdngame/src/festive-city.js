@@ -1,5 +1,5 @@
 // Adapted locally from the supplied city source; see PROVENANCE.md.
-import * as T from '../vendor/three.module.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
 
 // Reference-inspired seasonal art, not a surveyed 2026 event plan or trader list.
 // Primary organiser confirms Broad Street / Upperkirkgate Christmas Village and

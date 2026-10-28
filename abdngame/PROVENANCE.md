@@ -46,3 +46,5 @@ Super Chips, Open Sans, Comic Neue Bold and the replacement official Share Tech 
 - Additional café carts, furniture, planting, activity anchors, road shaders and night pools are original procedural geometry / code in src/neighbourhood-life.js and related game modules.
 
 - Character refresh: original procedural geometry and instanced animation, using the user’s supplied images solely as style references. No game models, textures or screenshots from those references are bundled. MoneyPot banners are original procedural text assets; no advertising service is integrated.
+
+- Animated charging-bay paint is original procedural geometry and shader code, inspired by the road-marking style in the user’s reference image. No pixels from the reference are bundled. Runtime diagnostics remain local to the browser; no analytics or advertising service is used.

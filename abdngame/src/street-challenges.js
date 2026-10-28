@@ -1,5 +1,5 @@
-import * as T from '../vendor/three.module.js';
-import {part,textSign} from './models.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import {part,textSign} from './models.js?v=fbce123b9ec4';
 
 // Staggered works pinch the carriageway while keeping a verified centre route open.
 export function addStreetChallenges(town,point){

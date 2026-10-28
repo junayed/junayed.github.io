@@ -1,4 +1,4 @@
-import * as T from '../vendor/three.module.js';
+import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
 
 // Locally generated, scale-aware material detail: no network textures.
 export function graniteMaterial(material,{strength=.46,joints=false}={}){
