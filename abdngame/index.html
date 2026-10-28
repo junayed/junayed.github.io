@@ -9,7 +9,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/SuperChips.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/OpenSans-Variable.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261028-city-life2">
+  <link rel="stylesheet" href="style.css?v=20261028-menu-readable">
 </head>
 <body>
 <main id="app">
@@ -18,7 +18,7 @@
   <div id="loading" class="loading"><img src="assets/branding/fit-like-logo.png" alt="Fit Like?"><span>Polishing the granite…</span><div class="load-track"><i></i></div><p id="boot-error" hidden></p></div>
 
   <section id="menu" class="menu" hidden aria-label="Main menu">
-    <header class="menu-header"><a class="club-mark" href="#" aria-label="Fit Like home"><span class="bolt">ϟ</span> THE LOW BATTERY CLUB</a><div class="menu-header-tools"><button id="menu-weather" class="weather-button">☁ WEATHER & SETTINGS</button><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header>
+    <header class="menu-header"><div class="menu-header-tools"><button id="menu-weather" class="weather-button" aria-label="Weather and settings" title="Weather and settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M1 8h2M3 3l1.5 1.5M13 3l-1.5 1.5M5 19a4 4 0 0 1 0-8 5 5 0 0 1 9-1 4.5 4.5 0 1 1 2 9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M8 4v6M16 14v6"/></svg></button><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header>
     <div class="hero">
       <div class="eyebrow"><span></span> ONE WEE LAP. FIT COULD HAPPEN?</div>
       <img class="hero-logo" src="assets/branding/fit-like-logo.png" alt="Fit Like?">
@@ -27,7 +27,7 @@
       <div class="play-row"><button id="play" class="button yellow">AWAY YE GO <span>↗</span></button><div class="best"><span>PERSONAL NONSENSE</span><strong id="menu-best">0</strong></div></div>
       <div class="control-peek"><span><kbd>W A S D</kbd> RIDE</span><span><kbd>SPACE</kbd> BOOST</span><span><kbd>F</kbd> SWIPE</span><button id="show-controls">ALL CONTROLS ↗</button></div>
     </div>
-    <aside class="forecast"><span class="mini-label">TODAY'S VERY LOCAL FORECAST</span><div><strong id="forecast-label">Granite grey.</strong><span class="weather-symbol">☁</span></div><p id="forecast-joke">A fine day for staying in. So naturally…</p><span class="forecast-instruction">CHANGE IT IN WEATHER & SETTINGS ↗</span></aside>
+    <aside class="forecast"><span class="mini-label">TODAY'S VERY LOCAL FORECAST</span><div><strong id="forecast-label">Granite grey.</strong><span class="weather-symbol">☁</span></div><p id="forecast-joke">A fine day for staying in. So naturally…</p><span class="forecast-instruction">CHANGE FORECAST WITH THE SETTINGS ICON ↗</span></aside>
     <footer class="menu-footer"><div class="district-list"><b>01</b> COLLEGE SQUARE <i>/</i> <b>02</b> GARDEN BRAE <i>/</i> <b>03</b> EAST PROM</div><div><button data-dialog="disclaimer">DISCLAIMER</button></div></footer>
   </section>
 
@@ -58,5 +58,5 @@
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=20261028-disclaimer"></script>
+<script type="module" src="src/app.js?v=20261028-menu-readable"></script>
 </body></html>

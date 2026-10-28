@@ -29,7 +29,7 @@
     "assets/fonts/SuperChips.ttf": "4e5487666f87d84550d36a44287c32de87ebb7b453d95bd46d2c74d25f5cb195",
     "assets/fonts/UnifrakturCook-Bold.ttf": "ea002fa9c65f1a612af100e00d87ab65f16381f450020ec3d021f3dbf79a6dcd",
     "assets/fonts/UnifrakturCook-OFL.txt": "99d2f30e282d6174af8ff68597f58bb53c0dcb2b104a4c1b8d19da49021d00d3",
-    "index.html": "55e60367ef2108cc6b984a09391b69723b34e6ad782a82dd8aebc3de0f06d8b0",
+    "index.html": "b31982c288fe7cbe7f68aae18ad2bb19e7483fca6af1f58bd045df3d4c2d1354",
     "planning/audio-manifest.json": "9fedda5735da2b2f2104d411f073ead0ffcba0876e613b4bc193c13e56f32b3d",
     "src/app.js": "559fe3acf1ff3edf50177c1e2f0fc4618b4007e5bc76169e9594ca9b59f8aeef",
     "src/audio.js": "18636c48d53f0bb0d7f1e9c31749a52c1e4c2f450f4c37bf6e11b9657ac25039",
@@ -58,7 +58,7 @@
     "src/trivia.js": "79f7f352f9e0d665e97b37592e3dbeec5aabb9ad4ecf149fc6699b2fe91a2820",
     "src/weather.js": "56aca9c934bfc7e158b2d118107a6c6be9085a1e7befff1608ad9c772503484b",
     "src/world.js": "ba2ab7e13c03daf7c52ec2035048340585e73cf6ae12adeaa8add2142ca3d071",
-    "style.css": "d76d4832300bd36addc2cdd951e4c8f2cc8b33aec68e64e6a11d5765a33d2c74",
+    "style.css": "ce64509c232909f53ecff6c7d85e28cd134b21d4c97f1204973fae6a91630a4f",
     "vendor/THREE-LICENSE.txt": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601",
     "vendor/three.core.js": "eb077d2417f61d3e6d9264c317cabc4ea35769ed6b0ab533067292a550784c20",
     "vendor/three.module.js": "c8211c69345d2e9949dc7a8ac969380497aa0600a5a8ac6a459c8cd02dd9cb8a"
