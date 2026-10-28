@@ -10,3 +10,5 @@ Both fonts are served locally. Super Chips is used in uppercase for display word
 Dialogue alternative: Comic Neue Bold by the Comic Neue Project Authors, SIL OFL 1.1 (included), https://github.com/google/fonts/tree/main/ofl/comicneue . Nirakolu was considered at the user’s request but its free download is personal-use only; it is not bundled in the published game.
 
 The current interface mono font is an unmodified official Share Tech Mono TTF from Google Fonts, with its SIL OFL included. The previous reference-game WOFF2 is not used or packaged in the web release.
+
+UnifrakturCook Bold — original fictional newspaper masthead; Google Fonts / OFL. Source: https://github.com/google/fonts/tree/main/ofl/unifrakturcook. License: UnifrakturCook-OFL.txt.

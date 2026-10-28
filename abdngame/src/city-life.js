@@ -1,10 +1,11 @@
 import * as T from '../vendor/three.module.js';
 import{part,textSign,material}from'./models.js';
 import{createExcavator,createFlag}from'./street-models.js';
+import{addNeighbourhoodLife}from'./neighbourhood-life.js';
 import{GARDENS}from'./park-source-data.js';
 import{shapeOf}from'./city-geometry.js';
 export class CityLife{
- constructor(town,point){this.town=town;this.scene=town.scene;this.point=point;this.flags=[];this.beacons=[];this.toys=[];this.ships=[];this.park();this.roadworks();this.cross();this.playgrounds();this.hazards();this.vessels();this.wayfinding();}
+ constructor(town,point){this.town=town;this.scene=town.scene;this.point=point;this.flags=[];this.beacons=[];this.toys=[];this.ships=[];this.park();this.roadworks();this.cross();this.playgrounds();this.hazards();this.vessels();this.wayfinding();addNeighbourhoodLife(this);this.playgroundActors();}
  at(group,x,z){const p=this.point(x,z);group.position.set(p[0],0,p[1]);group.rotation.y=.7458437691155841;this.scene.add(group);return p;}
  sign(group,text,x,y,z,w=4){const m=textSign(text,{width:w,height:.55,bg:'#4b3a61',fg:'#fff1bf',font:45});m.position.set(x,y,z);group.add(m);}
  park(){const t=this.town,rings=GARDENS.rings.map(r=>r.map(p=>this.point(...p))),geo=new T.ShapeGeometry(shapeOf(rings));geo.rotateX(-Math.PI/2);geo.translate(0,.11,0);const grass=new T.Mesh(geo,material('#829775'));grass.receiveShadow=true;this.scene.add(grass);
@@ -30,7 +31,8 @@ export class CityLife{
  }
  vessels(){for(const [x,z,col,scale]of[[1410,-1030,'#526c83',1],[1460,-720,'#a36e58',.8],[1390,-450,'#477c78',.65]]){const g=new T.Group();this.at(g,x,z);g.rotation.y+=.3;g.scale.setScalar(scale);part(g,col,0,1.1,0,8,2.2,27);for(const sign of[-1,1]){const bow=part(g,col,sign*1.8,1.1,14,4.6,2.2,5);bow.rotation.y=sign*.4;}part(g,'#d9d4ba',0,2.4,0,7.6,.25,26);part(g,'#e6e4d5',0,4.1,-6,6.8,3.3,8);part(g,'#425f71',0,5,-1.9,6,.9,.08);part(g,'#e6e3d1',0,6.4,-7,5.8,1.4,5);part(g,'#97694d',2,7.1,-9,1,4,1);part(g,'#d5c5a6',0,10,-5,.15,7,.15);part(g,'#d1c9ae',0,11,-5,5,.1,.1);for(const sx of[-3.7,3.7])for(let zz=-11;zz<12;zz+=3)part(g,'#cad1c2',sx,3,zz,.08,1,.08);this.ships.push(g);}}
  wayfinding(){for(const[x,z,text]of[[-210,-12,'CLOCK TOWER >'],[-32,-343,'COLLEGE MARKET >'],[160,-148,'EAST PROM >'],[1095,-715,'BALLROOM <'],[1150,-650,'FUNFAIR >'],[990,-710,'BEACH BOULEVARD']]){const p=this.point(x,z),safe=this.town.safePoint(...p,.5),g=new T.Group();g.position.set(safe.x,0,safe.z);g.rotation.y=.7458437691155841;part(g,'#536357',0,1.9,0,.08,3.8,.08);this.sign(g,text,0,3.1,0,5.7);this.scene.add(g);}}
- update(time){for(let i=0;i<this.ships.length;i++){this.ships[i].position.y=Math.sin(time*.6+i)*.18;this.ships[i].rotation.z=Math.sin(time*.4+i)*.008;}for(const toy of this.toys){if(toy.type==='swing')toy.root.rotation.x=Math.sin(time*1.5)*.25;else toy.root.rotation.z=Math.sin(time*.9)*.13;}if(this.digger)this.digger.boom.rotation.x=Math.sin(time*.7)*.06;for(const b of this.beacons)b.visible=Math.sin(time*5)>-.1;for(const f of this.flags)waveFlag(f,time);}
+ playgroundActors(){for(const toy of this.toys){for(const x of toy.type==='swing'?[0]:[-1.65,1.65]){const marker=new T.Object3D();marker.position.set(x,toy.type==='swing'?-3.1:-.8,0);marker.rotation.y=x<0?Math.PI/2:toy.type==='swing'?0:-Math.PI/2;toy.root.add(marker);this.activities.push({marker,kind:'seated',phase:x<0?Math.PI/2:-Math.PI/2});}}}
+ update(time){for(const l of this.warmLights||[])l.intensity=document.body.dataset.fitNight==='true'?3.5:0;for(const p of this.nightDecor||[])p.visible=document.body.dataset.fitNight==='true';for(let i=0;i<(this.playBalls||[]).length;i++){const b=this.playBalls[i];b.position.x=Math.sin(time*.8+i)*2.7;b.position.z=Math.cos(time*.8+i)*2;b.position.y=.35+Math.abs(Math.sin(time*2.4))*.3;}for(let i=0;i<this.ships.length;i++){this.ships[i].position.y=Math.sin(time*.6+i)*.18;this.ships[i].rotation.z=Math.sin(time*.4+i)*.008;}for(const toy of this.toys){if(toy.type==='swing')toy.root.rotation.x=Math.sin(time*1.5)*.25;else toy.root.rotation.z=Math.sin(time*.9)*.13;}if(this.digger)this.digger.boom.rotation.x=Math.sin(time*.7)*.06;for(const b of this.beacons)b.visible=Math.sin(time*5)>-.1;for(const f of this.flags)waveFlag(f,time);}
 }
 function tAdd(t,type,x,z){t.addProp(type,x,z);}
 export function waveFlag(f,time){const p=f.cloth.geometry.attributes.position;for(let i=0;i<p.count;i++)p.array[i*3+2]=Math.sin(f.base[i*3]*6-time*5+f.base[i*3+1])*f.base[i*3]*.15;p.needsUpdate=true;}
