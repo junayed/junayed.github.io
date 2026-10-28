@@ -1,7 +1,7 @@
 {
   "title": "Fit Like?",
   "version": "0.3.0",
-  "build": "3006fbd376ca",
+  "build": "2b9297269acc",
   "bundled": true,
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -19,6 +19,9 @@
     "assets/audio/temporary-bangla/sound-bomb-2.7fc51ef4a1.mp3": "7fc51ef4a15471580e3928beed0147ee8d660d272cd6af5084e33e139beddfa0",
     "assets/audio/temporary-bangla/sound-bomb-3.8a9ab6e6b9.mp3": "8a9ab6e6b927b41230192c710cda57b0e3da33fd4750f7f92593374b3d1abb8d",
     "assets/audio/temporary-bangla/sound-bomb-4.85f2ce82c4.mp3": "85f2ce82c405465f7520d20df2e144d44165f40f32eff21ddb69778f0f74a4b6",
+    "assets/branding/app-icon-180.png": "a4d78ffca7a7b3189dac68aba22e59455e94ab48e8385cc94c563ccab1249fe8",
+    "assets/branding/app-icon-192.png": "ada251f8e3737fb19a717af802a8adca475577ef5fbac1563aa1b05397707c4d",
+    "assets/branding/app-icon-512.png": "663993d79c7f53be1bf93af1b8b66051ee203074360e60e1d9e719ad4120198f",
     "assets/branding/fit-like-logo-1300.png": "348fd0ade396fe420832da3dceef607f475c254acce9c561fc8ecac42566aba7",
     "assets/branding/fit-like-logo-700.png": "15a7df30ceaec93045b6fbd1ce3333782aefe5e727df621e6184037faaeac077",
     "assets/fonts/ComicNeue-Bold.woff2": "5d06ca1ca1e430baceeda5384235e18f28f45443006d233cf8bef9d24c92282c",
@@ -31,10 +34,11 @@
     "assets/fonts/SuperChips.woff2": "2a8d0d975be5bfdf36b58be07482b67796563a458b33251967a16e68e3e995df",
     "assets/fonts/UnifrakturCook-Bold.woff2": "8495cbc8bf995eb2d87f2f07bc0d5e677dc851ccc69d4b6357d264f5f7585131",
     "assets/fonts/UnifrakturCook-OFL.txt": "b8500bc315739003724b1b61e20e8a362de9577e791f1e0a2a7752d0362e1e54",
-    "index.html": "a883db37330f8fe057d458bf1048dbe493395b3565bbd91746cea8e8d05aee65",
+    "index.html": "5dc199d9a32d782beac1ef0de8b9a228bf0d619c79c6fdf3deac9613a99627a8",
+    "manifest.webmanifest": "e59d8c6407ad262c04a377a631d8cb9283640c7c31f6bd799b40879fa2d9c1f0",
     "planning/audio-manifest.json": "23515d7a4a536d55f7c195380ca0b6e14de83347a453523d9f16ef7a7adf0d2e",
     "PROVENANCE.md": "a8a0751b247f498062ea181c610ee55717ebe02d2638d3d25b4b27858c065e4f",
-    "src/app.js": "ec8402bfbacb62bc765ce090596539a7dcc368e11f037bfeb57285072c59862b",
+    "src/app.js": "9578233ca8c8803b3bd1acbabccc466b5b9dab3da457a21de64af0b6f5f524e8",
     "src/THREE-LICENSE.txt": "df2a91696186fe58c92518a25d48bc59c8ee2edc7cac9ca6d19a5a0d599a2a05",
     "style.css": "61c73c48a87a67c1b9285dba2748ca03f1668a9ae2cc60079358351d348394c5"
   }
