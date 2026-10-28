@@ -1,7 +1,7 @@
-import{createCar}from'./street-models.js?v=fbce123b9ec4';
-import{RoadNetwork,routeSample,vehicleContact}from'./road-network.js?v=fbce123b9ec4';
-import{dampAngle}from'./performance-utils.js?v=fbce123b9ec4';
-import{wantedLevel,hasClearThrow,difficultyFor}from'./rules.js?v=fbce123b9ec4';
+import{createCar}from'./street-models.js?v=932ddd9cb928';
+import{RoadNetwork,routeSample,vehicleContact}from'./road-network.js?v=932ddd9cb928';
+import{dampAngle}from'./performance-utils.js?v=932ddd9cb928';
+import{wantedLevel,hasClearThrow,difficultyFor}from'./rules.js?v=932ddd9cb928';
 export class Traffic{
  constructor(scene,town,hooks){this.scene=scene;this.town=town;this.hooks=hooks;this.network=new RoadNetwork(town.roads,town.collision);this.cars=[];this.police=[];town.managedTraffic=true;
   town.traffic.forEach((b,i)=>{Object.assign(b,{id:'bus'+i,type:'bus',route:i>=2?'coast':'town',length:7.8,width:2.5,hitUntil:0,stop:0});this.cars.push(b);});

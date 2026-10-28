@@ -1,11 +1,12 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
-import {part,textSign} from './models.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
+import {part,textSign} from './models.js?v=932ddd9cb928';
 
 // Staggered works pinch the carriageway while keeping a verified centre route open.
 export function addStreetChallenges(town,point){
  town.chicanes=[];
  const seeds=[[-270,-150],[-160,-25],[-96,-68],[146,-177],[1095,-830],[1130,-675]];
- for(const seed of seeds){const p=point(...seed);let best=null;
+ const sites=seeds.map(seed=>point(...seed));for(const r of town.roads){if(r.width<5||!['residential','tertiary','secondary','unclassified'].includes(r.type))continue;for(let i=1;i<r.points.length;i++){const a=r.points[i-1],b=r.points[i];if(Math.hypot(b[0]-a[0],b[1]-a[1])<30)continue;const p=[(a[0]+b[0])/2,(a[1]+b[1])/2];if(sites.length<24&&sites.every(q=>Math.hypot(p[0]-q[0],p[1]-q[1])>145))sites.push(p);}}
+ for(const p of sites){let best=null;
   for(const r of town.roads){if(r.width<5||!['primary','secondary','tertiary','residential','unclassified','living_street'].includes(r.type))continue;
    for(let i=1;i<r.points.length;i++){const a=r.points[i-1],b=r.points[i],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<24)continue;const t=Math.max(.25,Math.min(.75,((p[0]-a[0])*dx+(p[1]-a[1])*dz)/(len*len))),x=a[0]+dx*t,z=a[1]+dz*t,dist=Math.hypot(x-p[0],z-p[1]);if(dist>32||best&&best.dist<dist)continue;const angle=Math.atan2(dx,dz);if(Array.from({length:29},(_,j)=>j*.6-8.4).some(d=>town.collision.blocked(x+Math.sin(angle)*d,z+Math.cos(angle)*d,.95)))continue;best={x,z,angle,dist,width:Math.min(7.2,r.width)};}
   }

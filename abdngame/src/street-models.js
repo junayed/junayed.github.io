@@ -1,6 +1,6 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
-import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=fbce123b9ec4';
-import{part,material,readableTextMaterial}from'./models.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
+import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=932ddd9cb928';
+import{part,material,readableTextMaterial}from'./models.js?v=932ddd9cb928';
 const vehicleModels=new Map(),cycleModels=new Map(),animalModels=new Map();
 const wheel=new T.CylinderGeometry(1,1,1,12),sphere=new T.IcosahedronGeometry(1,1),cone=new T.ConeGeometry(1,1,4);
 export function createCar(color='#8b6771',police=false){const key=color+':'+police,cached=vehicleModels.get(key);if(cached){const root=cached.clone(true);return{root,body:root.getObjectByName('car-body'),wheels:[],lamps:police?[root.getObjectByName('patrol-lamp-0'),root.getObjectByName('patrol-lamp-1')]:[]};}const root=new T.Group(),body=new T.Group();root.add(body);
@@ -15,12 +15,24 @@ export function createCycle(color='#cd725a'){if(cycleModels.has(color))return{ro
  const tube=(x,y,z,w,h,d,rx=0)=>{const p=part(root,color,x,y,z,w,h,d);p.rotation.x=rx;};
  tube(0,.65,0,.08,.08,1.2);tube(0,.64,-.35,.07,.65,.07,-.8);tube(0,.64,.34,.07,.7,.07,.75);tube(0,.94,0,.08,.08,.85);tube(0,1,.62,.06,.8,.06,-.12);part(root,'#333943',0,1.05,-.37,.36,.1,.35);part(root,'#313b41',0,1.37,.66,.67,.07,.08);part(root,'#525764',0,.46,-.1,.45,.06,.08);mergeStaticParts(root,{local:true,cellSize:10000});disableShadows(root);freezeTransforms(root);root.matrixAutoUpdate=true;cycleModels.set(color,root.clone(true));return{root,wheels:[]};
 }
-export function createAnimal(species='dog',color='#aa825e'){const key=species+':'+color,cached=animalModels.get(key);if(cached){const root=cached.clone(true);return{root,body:root.getObjectByName('pet-body'),legs:Array.from({length:4},(_,i)=>root.getObjectByName('pet-leg-'+i)),tail:root.getObjectByName('pet-tail'),species};}const root=new T.Group(),body=new T.Group();root.add(body);const cat=species==='cat',size=cat?.7:1;
- body.scale.setScalar(size);part(body,color,0,.45,0,.42,.38,.83,sphere);part(body,color,0,.68,.49,.35,.35,.38,sphere);part(body,cat?'#ead7c8':color,0,.6,.7,.26,.18,.29);part(body,'#272d36',0,.65,.86,.12,.1,.07);
- for(const x of[-.1,.1])part(body,'#1f2936',x,.76,.66,.045,.055,.035);
- for(const x of[-.17,.17]){const ear=part(body,cat?color:'#75563e',x,cat?.92:.71,.44,.17,cat?.25:.3,.19,cat?cone:sphere);if(!cat)ear.rotation.z=x<0?-.3:.3;}
- const legs=[];for(const x of[-.17,.17])for(const z of[-.27,.27])legs.push(part(body,color,x,.2,z,.11,.4,.12));const tail=part(body,color,0,.64,-.56,.1,.55,.1);tail.rotation.x=cat?-.2:-.65;
- part(body,'#6e3a92',0,.53,.37,.4,.1,.15);mergeStaticParts(body,{local:true,cellSize:10000,exclude:[...legs,tail]});disableShadows(root);freezeTransforms(root);root.matrixAutoUpdate=true;for(const leg of legs)leg.matrixAutoUpdate=true;tail.matrixAutoUpdate=true;body.name='pet-body';legs.forEach((l,i)=>l.name='pet-leg-'+i);tail.name='pet-tail';animalModels.set(key,root.clone(true));return{root,body,legs,tail,species};
+export function createAnimal(species='dog',color='#aa825e'){
+ const key=species+':'+color,cached=animalModels.get(key);
+ if(cached){const root=cached.clone(true);return{root,body:root.getObjectByName('pet-body'),legs:Array.from({length:4},(_,i)=>root.getObjectByName('pet-leg-'+i)),tail:root.getObjectByName('pet-tail'),species};}
+ const root=new T.Group(),body=new T.Group(),cat=species==='cat',cow=species==='cow',legs=[];root.add(body);body.scale.setScalar(cow?1.25:cat?.7:1);let tail;
+ if(cow){
+  part(body,color,0,.83,-.05,.49,.34,.82,sphere);part(body,'#b77940',0,1.03,.77,.37,.33,.35,sphere);part(body,'#d5af85',0,.88,1.03,.28,.14,.2,sphere);
+  for(const x of[-.32,.32])for(const z of[-.48,.48]){const leg=new T.Group();leg.position.set(x,.28,z);body.add(leg);part(leg,'#995b32',0,0,0,.17,.56,.19);part(leg,'#3f3534',0,-.23,.02,.2,.11,.23);legs.push(leg);}
+  for(const side of[-1,1]){const horn=part(body,'#eee0ba',side*.43,1.29,.68,.48,.08,.09);horn.rotation.z=side*.25;const tip=part(body,'#e9d5aa',side*.65,1.4,.68,.08,.28,.08);tip.rotation.z=-side*.23;part(body,'#1e2931',side*.18,1.05,1.09,.07,.055,.035);part(body,'#c99462',side*.39,1.04,.66,.24,.10,.20,sphere);}
+  for(let i=0;i<7;i++){const f=part(body,i%2?'#99592e':'#bb7a3e',-.29+i*.095,1.22,1.04,.105,.24+(i%3)*.045,.11);f.rotation.z=(i-3)*.08;}
+  for(const side of[-1,1])for(let i=0;i<6;i++)part(body,i%2?'#a36131':'#b2723b',side*.43,.6,-.64+i*.24,.10,.25+(i%2)*.06,.17);
+  for(const x of[-.1,.1])part(body,'#67483c',x,.91,1.223,.06,.045,.025);tail=part(body,color,0,.85,-.95,.09,.57,.1);tail.rotation.x=-.45;
+ }else{
+  part(body,color,0,.45,0,.42,.38,.83,sphere);part(body,color,0,.68,.49,.35,.35,.38,sphere);part(body,cat?'#ead7c8':color,0,.6,.7,.26,.18,.29);part(body,'#272d36',0,.65,.86,.12,.1,.07);
+  for(const x of[-.1,.1])part(body,'#1f2936',x,.76,.66,.045,.055,.035);
+  for(const x of[-.17,.17]){const ear=part(body,cat?color:'#75563e',x,cat?.92:.71,.44,.17,cat?.25:.3,.19,cat?cone:sphere);if(!cat)ear.rotation.z=x<0?-.3:.3;}
+  for(const x of[-.17,.17])for(const z of[-.27,.27])legs.push(part(body,color,x,.2,z,.11,.4,.12));tail=part(body,color,0,.64,-.56,.1,.55,.1);tail.rotation.x=cat?-.2:-.65;part(body,'#6e3a92',0,.53,.37,.4,.1,.15);
+ }
+ mergeStaticParts(body,{local:true,cellSize:10000,exclude:[...legs,tail]});disableShadows(root);freezeTransforms(root);root.matrixAutoUpdate=true;for(const leg of legs)leg.matrixAutoUpdate=true;tail.matrixAutoUpdate=true;body.name='pet-body';legs.forEach((l,i)=>l.name='pet-leg-'+i);tail.name='pet-tail';animalModels.set(key,root.clone(true));return{root,body,legs,tail,species};
 }
 const bannerTextures=new Map();
 const rainbow=['#e8585a','#ee9c43','#f5d94b','#68ad68','#4c8fd1','#9656bd'];

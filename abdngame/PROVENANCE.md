@@ -48,3 +48,8 @@ Super Chips, Open Sans, Comic Neue Bold and the replacement official Share Tech 
 - Character refresh: original procedural geometry and instanced animation, using the user’s supplied images solely as style references. No game models, textures or screenshots from those references are bundled. MoneyPot banners are original procedural text assets; no advertising service is integrated.
 
 - Animated charging-bay paint is original procedural geometry and shader code, inspired by the road-marking style in the user’s reference image. No pixels from the reference are bundled. Runtime diagnostics remain local to the browser; no analytics or advertising service is used.
+
+The street population controller, reactive scaffolding and seagull hazard logic,
+Highland cow and bagpiper/police model additions, neon interface treatment, and
+`assets/ui/loading-town.svg` are original project code/artwork. User-provided
+screenshots guide their appearance; no screenshot pixels are incorporated.

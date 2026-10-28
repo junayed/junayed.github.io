@@ -1,4 +1,4 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
 // Painted dashed bay, charging bolt and flowing approach chevrons; no textures or lights.
 export function createChargingBay(c,scene){const p=[],colour=[],flow=[],cream=new T.Color('#fff0bc'),gold=new T.Color('#ffd86b');
  const tri=(a,b,d,tint=cream,animate=0)=>{for(const q of[a,b,d]){p.push(q[0],0,q[1]);colour.push(tint.r,tint.g,tint.b);flow.push(animate);}};

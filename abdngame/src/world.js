@@ -1,10 +1,10 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
-import{createChargingBay}from'./charging-bay.js?v=fbce123b9ec4';
-import{Batch,material,part,textSign,propModel,createBus}from'./models.js?v=fbce123b9ec4';
-import{buildCollege}from'./college.js?v=fbce123b9ec4';
-import{COLLEGE,HOMES}from'./city-source-data.js?v=fbce123b9ec4';
-import{CollisionWorld,Pathfinder}from'./collision.js?v=fbce123b9ec4';
-import{seeded,districtAt}from'./rules.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
+import{createChargingBay}from'./charging-bay.js?v=932ddd9cb928';
+import{Batch,material,part,textSign,propModel,createBus}from'./models.js?v=932ddd9cb928';
+import{buildCollege}from'./college.js?v=932ddd9cb928';
+import{COLLEGE,HOMES}from'./city-source-data.js?v=932ddd9cb928';
+import{CollisionWorld,Pathfinder}from'./collision.js?v=932ddd9cb928';
+import{seeded,districtAt}from'./rules.js?v=932ddd9cb928';
 const treeGeo=new T.IcosahedronGeometry(1,1),poleGeo=new T.CylinderGeometry(1,1,1,7);
 export class Town{
  constructor(scene){this.scene=scene;this.collision=new CollisionWorld();this.batch=new Batch(scene);this.random=seeded(5644);this.props=[];this.buildings=[];this.lamps=[];this.charges=[{x:-46,z:-42},{x:-218,z:139},{x:190,z:118}];this.traffic=[];this.gulls=[];

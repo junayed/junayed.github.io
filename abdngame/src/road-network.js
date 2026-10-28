@@ -1,4 +1,4 @@
-import{MinHeap}from'./performance-utils.js?v=fbce123b9ec4';
+import{MinHeap}from'./performance-utils.js?v=932ddd9cb928';
 // Road-only navigation keeps patrol cars out of gardens and pedestrian alleys.
 export class RoadNetwork{
  constructor(roads,collision){this.nodes=[];this.buckets=new Map();this.collision=collision;for(const road of roads){if(!['primary','secondary','tertiary','residential','unclassified','living_street'].includes(road.type)||road.width<5)continue;let prev=null;for(let i=1;i<road.points.length;i++){const a=road.points[i-1],b=road.points[i],len=Math.hypot(b[0]-a[0],b[1]-a[1]),steps=Math.max(1,Math.ceil(len/7));for(let j=i===1?0:1;j<=steps;j++){const x=a[0]+(b[0]-a[0])*j/steps,z=a[1]+(b[1]-a[1])*j/steps;if(collision.blocked(x,z,.95)){prev=null;continue;}const node=this.add(x,z);if(prev&&node!==prev&&this.clear(prev,node)){const d=Math.hypot(node.x-prev.x,node.z-prev.z);prev.edges.set(node.id,d);node.edges.set(prev.id,d);}prev=node;}}}}

@@ -1,6 +1,6 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
-import{part,material,textSign}from'./models.js?v=fbce123b9ec4';
-import{clamp}from'./rules.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
+import{part,material,textSign}from'./models.js?v=932ddd9cb928';
+import{clamp}from'./rules.js?v=932ddd9cb928';
 // Ramp surface and vertical motion are independent of rendering for deterministic checks.
 export function rampSurface(r,p){const dx=p.x-r.x,dz=p.z-r.z,c=Math.cos(r.angle),s=Math.sin(r.angle),x=dx*c-dz*s,z=dx*s+dz*c;return Math.abs(x)<=r.width/2&&z>=-r.length/2&&z<=r.length/2?{height:(z/r.length+.5)*r.height,progress:z/r.length+.5}:null;}
 export function verticalStep(p,dt,ramps,time,onJump=()=>{}){p.y??=0;p.vy??=0;const r=ramps.find(r=>rampSurface(r,p)),surface=r&&rampSurface(r,p);if(!p.airborne&&surface){p.y=surface.height;if(p.onRamp!==r)p.rampEntryProgress=surface.progress;p.onRamp=r;p.rampProgress=surface.progress;}else if(!p.airborne&&p.onRamp){const old=p.onRamp;if(p.rampProgress>.7&&p.rampEntryProgress<.35&&p.speed>5&&Math.cos(p.angle-old.angle)>.5){p.airborne=true;p.vy=7.5+Math.min(20,p.speed)*.27;onJump(old);}else p.y=0;p.onRamp=null;}if(p.airborne){p.vy-=20*dt;p.y+=p.vy*dt;if(p.y<=0){p.y=0;p.vy=0;p.airborne=false;p.justLanded=true;}}return p.y;}

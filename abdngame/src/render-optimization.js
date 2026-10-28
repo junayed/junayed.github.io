@@ -1,4 +1,4 @@
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
 const nightMaterials=new Set(['f2dba3','3f5866','405a65','294f5b','3e5d6b','456373']);
 const coloured=new T.MeshLambertMaterial({color:'#ffffff',vertexColors:true});
 

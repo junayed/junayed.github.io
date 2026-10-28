@@ -1,17 +1,17 @@
 // Actual supplied street connections and building footprints, retained at city scale.
-import * as T from '../vendor/three.module.js?v=fbce123b9ec4';
-import{optimizeTown}from'./render-optimization.js?v=fbce123b9ec4';
-import{Town}from'./world.js?v=fbce123b9ec4';
-import{CITY,STREET_DATA,STREET_PROPS,COAST_ENV}from'./dense-city-data.js?v=fbce123b9ec4';
-import{shapeOf,geometryFrom,mergeInto,makeRoof}from'./city-geometry.js?v=fbce123b9ec4';
-import{buildCollege,buildTownHouse}from'./college.js?v=fbce123b9ec4';
-import{COLLEGE}from'./city-source-data.js?v=fbce123b9ec4';
-import{CityLife}from'./city-life.js?v=fbce123b9ec4';
-import{addCoast,COAST_SKIP_IDS}from'./coastal-landmarks.js?v=fbce123b9ec4';
-import{COAST}from'./coast-data.js?v=fbce123b9ec4';
-import{createFestiveCity}from'./festive-city.js?v=fbce123b9ec4';
-import{CollisionWorld,inRing,polygonBlocks}from'./collision.js?v=fbce123b9ec4';
-import{material,textSign,part}from'./models.js?v=fbce123b9ec4';
+import * as T from '../vendor/three.module.js?v=932ddd9cb928';
+import{optimizeTown}from'./render-optimization.js?v=932ddd9cb928';
+import{Town}from'./world.js?v=932ddd9cb928';
+import{CITY,STREET_DATA,STREET_PROPS,COAST_ENV}from'./dense-city-data.js?v=932ddd9cb928';
+import{shapeOf,geometryFrom,mergeInto,makeRoof}from'./city-geometry.js?v=932ddd9cb928';
+import{buildCollege,buildTownHouse}from'./college.js?v=932ddd9cb928';
+import{COLLEGE}from'./city-source-data.js?v=932ddd9cb928';
+import{CityLife}from'./city-life.js?v=932ddd9cb928';
+import{addCoast,COAST_SKIP_IDS}from'./coastal-landmarks.js?v=932ddd9cb928';
+import{COAST}from'./coast-data.js?v=932ddd9cb928';
+import{createFestiveCity}from'./festive-city.js?v=932ddd9cb928';
+import{CollisionWorld,inRing,polygonBlocks}from'./collision.js?v=932ddd9cb928';
+import{material,textSign,part}from'./models.js?v=932ddd9cb928';
 const angle=.7458437691155841,C=Math.cos(angle),S=Math.sin(angle),anchor=[6.2530804613342745,-342.6609072727045];
 export function cityPoint(x,z){x-=anchor[0];z-=anchor[1];return[C*x+S*z,-S*x+C*z-154];}
 export function sourcePoint(x,z){z+=154;return[C*x-S*z+anchor[0],S*x+C*z+anchor[1]];}
@@ -25,6 +25,7 @@ export class DenseTown extends Town{
   const union=CITY.roads.filter(r=>r[2]==='Union Street').flatMap(r=>r[0]).filter(p=>p[0]>-650&&p[0]<160).sort((a,b)=>a[0]-b[0]);const points=union.filter((p,i)=>!i||Math.hypot(p[0]-union[i-1][0],p[1]-union[i-1][1])>.1).map(p=>cityPoint(...p));this.busRoute=[...points,...points.slice().reverse()];const coast=CITY.roads.filter(r=>r[2]==='Esplanade'&&r[1]>=6).flatMap(r=>r[0]).filter(p=>p[1]>-1200&&p[1]<-300).sort((a,b)=>a[1]-b[1]);const coastalPoints=coast.filter((p,i)=>!i||Math.hypot(p[0]-coast[i-1][0],p[1]-coast[i-1][1])>.1).map(p=>cityPoint(...p));this.coastRoute=[...coastalPoints,...coastalPoints.slice().reverse()];this.traffic.forEach((b,i)=>{b.d=i*400;});this.mapBounds=this.collision.bounds;this.locations=[['belmont','THE WEE LANES',-270,-107,-.465,-.885],['highstreet','THE HIGH STREET',-180,-23,1,-.5],['college','COLLEGE SQUARE',-21,-330,.65,.76],['gardens','GARDEN BRAE',-456,-136,.68,.73],['market','MARKET CROSS',150,-151,1,-.3],['coast','SEAFRONT & FUNFAIR',1090,-722,.45,.9]].map(([id,name,x,z,dx,dz])=>{const p=cityPoint(x,z),dir=cityPoint(x+dx,z+dz),heading=Math.atan2(dir[0]-p[0],dir[1]-p[1]),safe=this.rideSpawn(p[0],p[1],heading);return{id,name,...safe,menuAngle:id==='college'?3.102:id==='coast'?-1.288:Math.atan2(dir[0]-p[0],dir[1]-p[1])};});this.landmarks=[['COLLEGE',-25,-320],['CLOCK TOWER',148,-220],['GARDENS',-440,-145],['MARKET CROSS',163,-167],['BALLROOM',1045,-748],['FUNFAIR',1113,-576]].map(([name,x,z])=>{const p=cityPoint(x,z);return{name,x:p[0],z:p[1]};});optimizeTown(this);this.update(0,0);
  }
  districtAt(x,z){const p=sourcePoint(x,z);return p[0]>700?'coast':p[0]<-450||p[1]>500?'homes':p[1]<-260?'college':'shops';}
+ neighbourhoodName(x,z){const p=sourcePoint(x,z);if(p[0]>700)return p[1]>-650?'FUNFAIR PROM':'EAST PROM';if(p[0]<-350&&p[1]<0&&p[1]>-230)return 'GARDEN BRAE';if(p[1]<-260)return 'COLLEGE SQUARE';if(p[0]>90)return 'CLOCKGATE';return p[1]>-60?'THE HIGH STREET':'THE WEE LANES';}
  cameraBlocked(x,z,height){if(!this.cameraCells){this.cameraCells=new Map();for(const b of this.buildings){for(let ix=Math.floor((b.x-b.w/2)/64);ix<=Math.floor((b.x+b.w/2)/64);ix++)for(let iz=Math.floor((b.z-b.d/2)/64);iz<=Math.floor((b.z+b.d/2)/64);iz++){const key=ix*65536+iz;if(!this.cameraCells.has(key))this.cameraCells.set(key,[]);this.cameraCells.get(key).push(b);}}}const ix=Math.floor(x/64),iz=Math.floor(z/64);for(let dx=-1;dx<=1;dx++)for(let dz=-1;dz<=1;dz++)for(const b of this.cameraCells.get((ix+dx)*65536+iz+dz)||[]){if(b.h>height-1&&Math.abs(b.x-x)<b.w/2+1&&Math.abs(b.z-z)<b.d/2+1&&(b.rings?polygonBlocks(x,z,.4,b.rings):true))return true;}return false;}
 
  rideSpawn(x,z,angle){const clear=(x,z,a,from=0,to=20)=>{for(let d=from;d<=to;d+=.7)if(this.collision.blocked(x+Math.sin(a)*d,z+Math.cos(a)*d,.85))return false;return true;};if(clear(x,z,angle))return{x,z,angle};const options=[];for(const road of this.roads){if(road.width<3||['steps','construction','proposed'].includes(road.type))continue;for(let i=1;i<road.points.length;i++){const a=road.points[i-1],b=road.points[i],dx=b[0]-a[0],dz=b[1]-a[1],l=Math.hypot(dx,dz),t=clampLocal(((x-a[0])*dx+(z-a[1])*dz)/(l*l||1),0,1),px=a[0]+dx*t,pz=a[1]+dz*t,d=Math.hypot(px-x,pz-z);if(d>45)continue;for(const yaw of[Math.atan2(dx,dz),Math.atan2(-dx,-dz)])if(clear(px,pz,yaw))options.push({x:px,z:pz,angle:yaw,score:d+(1-Math.cos(yaw-angle))*10});}}options.sort((a,b)=>a.score-b.score);if(options.length)return options[0];return{...this.safePoint(x,z),angle};}

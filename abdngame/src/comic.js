@@ -1,4 +1,4 @@
-import{Vector3}from'../vendor/three.module.js?v=fbce123b9ec4';
+import{Vector3}from'../vendor/three.module.js?v=932ddd9cb928';
 export class ComicWords{
  constructor(container){this.container=container;this.words=[];this.point=new Vector3();}
  add(x,z,text='OOFT!',color='yellow'){if(this.words.length>=8)this.remove(this.words[0]);const el=document.createElement('span');el.className='comic-word '+color;el.textContent=text;this.container.append(el);this.words.push({x,z,el,life:.85,total:.85});}
