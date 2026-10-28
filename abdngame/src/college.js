@@ -1,6 +1,6 @@
 // Adapted from the supplied city architecture module. See PROVENANCE.md.
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import {graniteMaterial} from './city-materials.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import {graniteMaterial} from './city-materials.js?v=eab55fb4e400';
 const project=p=>[(p[0]+2.097)*111320*Math.cos(57.146*Math.PI/180),-(p[1]-57.146)*111320];
 const buckets=new Map(),matrix=new T.Matrix4(),q=new T.Quaternion(),one=new T.Vector3(1,1,1);
 const mats={stone:new T.MeshLambertMaterial({color:'#bec0ba'}),trim:new T.MeshLambertMaterial({color:'#d1d2ca'}),slate:new T.MeshLambertMaterial({color:'#46515a'}),glass:new T.MeshPhongMaterial({color:'#3e5d6b',specular:'#c4d6e5',shininess:110}),glassDark:new T.MeshPhongMaterial({color:'#456373',specular:'#b9cbd4',shininess:80}),metal:new T.MeshLambertMaterial({color:'#888f8c'}),dark:new T.MeshLambertMaterial({color:'#26312e'}),cladding:new T.MeshLambertMaterial({color:'#a9aaa3'}),brick:new T.MeshLambertMaterial({color:'#796f60'}),gold:new T.MeshLambertMaterial({color:'#bdab7d'}),white:new T.MeshBasicMaterial({color:'#d4d2be'})};

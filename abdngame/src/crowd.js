@@ -1,10 +1,10 @@
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{CrowdRenderer,material,part,textSign}from'./models.js?v=932ddd9cb928';
-import{createCycle,createAnimal,createFlag,createBottle}from'./street-models.js?v=932ddd9cb928';
-import{waveFlag}from'./city-life.js?v=932ddd9cb928';
-import{disableShadows,mergeStaticParts}from'./render-optimization.js?v=932ddd9cb928';
-import{seeded,clamp,hasClearThrow,difficultyFor}from'./rules.js?v=932ddd9cb928';
-import{StreetPopulation}from'./street-population.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{CrowdRenderer,material,part,textSign}from'./models.js?v=eab55fb4e400';
+import{createCycle,createAnimal,createFlag,createBottle}from'./street-models.js?v=eab55fb4e400';
+import{waveFlag}from'./city-life.js?v=eab55fb4e400';
+import{disableShadows,mergeStaticParts}from'./render-optimization.js?v=eab55fb4e400';
+import{seeded,clamp,hasClearThrow,difficultyFor}from'./rules.js?v=eab55fb4e400';
+import{StreetPopulation}from'./street-population.js?v=eab55fb4e400';
 const sphereGear=new T.IcosahedronGeometry(1,1);
 const complaints=['Mind the messages!','That was ma last clean table!','I’ve only just swept that!','There’s a road there, in case ye missed it.','I came oot for a fly cup.','The scooter’s quiet. You arenae.'];
 export class Crowd{

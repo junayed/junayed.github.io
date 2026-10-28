@@ -1,5 +1,5 @@
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=eab55fb4e400';
 const mats=new Map();
 export function material(color){if(!mats.has(color)){const m=new T.MeshLambertMaterial({color});if(color==='#626d72'){
  m.onBeforeCompile=s=>{s.vertexShader=s.vertexShader.replace('#include <common>','#include <common>\nvarying vec3 vAsphalt;').replace('#include <begin_vertex>',`#include <begin_vertex>

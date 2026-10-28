@@ -53,3 +53,5 @@ The street population controller, reactive scaffolding and seagull hazard logic,
 Highland cow and bagpiper/police model additions, neon interface treatment, and
 `assets/ui/loading-town.svg` are original project code/artwork. User-provided
 screenshots guide their appearance; no screenshot pixels are incorporated.
+
+`assets/ui/loading-city.png` is a native browser capture of the project’s own Three.js city render, using the same supplied city geometry and project characters as the game. The loading screen and home screen share the same responsive logo layout.

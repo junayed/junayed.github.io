@@ -9,13 +9,13 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/SuperChips.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="assets/fonts/OpenSans-Variable.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css?v=932ddd9cb928">
+  <link rel="stylesheet" href="style.css?v=eab55fb4e400">
 </head>
 <body>
 <main id="app">
   <canvas id="world" aria-label="Three-dimensional scooter game"></canvas>
   <div class="scene-grade" aria-hidden="true"></div>
-  <div id="loading" class="loading"><div class="loading-scene" aria-hidden="true"><img src="assets/ui/loading-town.svg" alt=""><svg class="loading-gull" viewBox="0 0 90 40"><path d="M4 13Q24 0 43 27Q61 0 86 13"/><path d="M39 27h10l-5 6z"/></svg><div class="loading-haar"></div></div><img src="assets/branding/fit-like-logo.png" alt="Fit Like?"><span>Polishing the granite…</span><div class="load-track"><i></i></div><p id="boot-error" hidden></p></div>
+  <div id="loading" class="loading menu" aria-label="Loading the town"><div class="loading-backdrop" aria-hidden="true"></div><header class="menu-header loading-header" aria-hidden="true"><div class="menu-header-tools"><span class="loading-weather-space"></span><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header><div class="hero"><img class="hero-logo" src="assets/branding/fit-like-logo.png" alt="Fit Like?"><div class="loading-status" role="status"><span>Polishing the granite…</span><div class="load-track"><i></i></div><p id="boot-error" hidden></p></div></div><footer class="menu-footer loading-footer" aria-hidden="true"></footer></div>
 
   <section id="menu" class="menu" hidden aria-label="Main menu">
     <header class="menu-header"><div class="menu-header-tools"><button id="menu-weather" class="weather-button" aria-label="Weather and settings" title="Weather and settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M1 8h2M3 3l1.5 1.5M13 3l-1.5 1.5M5 19a4 4 0 0 1 0-8 5 5 0 0 1 9-1 4.5 4.5 0 1 1 2 9Z"/></svg></button><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header>
@@ -25,7 +25,7 @@
       <h1>NAE PEACE. <em>LOW BATTERY.</em></h1>
       <p class="hero-copy">Big granite. Wee wheels. Terrible decisions.</p><label class="start-place-label" for="start-place">START A WEE SCENE IN <select id="start-place" aria-label="Starting neighbourhood"></select></label>
       <div class="play-row"><button id="play" class="button yellow">AWAY YE GO <span>↗</span></button><div class="best"><span>PERSONAL NONSENSE</span><strong id="menu-best">0</strong></div></div>
-      <div class="control-peek"><span><kbd>W A S D</kbd> RIDE</span><span><kbd>SPACE</kbd> BOOST</span><span><kbd>F</kbd> SWIPE</span></div>
+      <div class="control-peek"><span><kbd>W A S D</kbd> RIDE</span><span><kbd>SPACE</kbd> BOOST</span></div>
     </div>
     <aside class="forecast"><span class="mini-label">TODAY'S VERY LOCAL FORECAST</span><div><strong id="forecast-label">Granite grey.</strong><span class="weather-symbol">☁</span></div><p id="forecast-joke">A fine day for staying in. So naturally…</p><span class="forecast-instruction">CHANGE WITH THE WEATHER ICON ↗</span></aside>
     <footer class="menu-footer"><div class="menu-footer-actions"><button id="show-controls">ALL CONTROLS ↗</button><span aria-hidden="true">·</span><button data-dialog="disclaimer">DISCLAIMER</button></div></footer>
@@ -42,9 +42,9 @@
     <div id="scaffold-progress" class="scaffold-progress">SCAFFOLDS 0/3</div>
     <div id="wanted" class="wanted" hidden></div>
     <div id="notice" class="notice" hidden></div><div id="bark" class="bark" hidden></div><div id="charge-hint" class="charge-hint" hidden>ϟ HOLD STILL TO CHARGE</div>
-    <div class="map-card"><header><b>THE WEE MAP</b><button id="map-zoom" aria-label="Show whole town map">TOWN ↗</button></header><canvas id="minimap" width="200" height="200" aria-label="Town map: glowing purple rider, gold nearest charger, pink chasers and blue police"></canvas><div class="map-legend">▲ YOU <span>● CHASER</span></div><div class="charger-guide"><span class="charge-star">★</span><div>NEAREST CHARGER<strong id="charger-distance">0m</strong></div><b id="charge-arrow">↑</b></div></div>
-    <div id="keyboard-hint" class="keyboard-hint"><b>WASD</b> Ride <b>SPACE</b> Boost <b>F</b> Swipe <b>H</b> Bell <b>B</b> Banter <b>ESC</b> Pause</div>
-    <div id="touch-controls"><div id="stick" aria-label="Steering joystick"><div id="stick-thumb"></div><span>RIDE</span></div><div class="touch-actions"><button data-hold="brake" class="brake">BACK / BRAKE</button><button data-hold="boost" class="boost">ϟ</button><button data-action="attack">SWIPE</button><button data-action="horn">♬</button><button data-action="taunt">BANTER</button></div></div>
+    <div class="map-card"><header><b>THE WEE MAP</b><button id="map-zoom" aria-label="Show whole town map">TOWN ↗</button></header><canvas id="minimap" width="200" height="200" aria-label="Town map: purple rider, gold nearest charger, rose chasers and blue police"></canvas><div class="map-legend">▲ YOU <span>● CHASER</span></div><div class="charger-guide"><span class="charge-star">★</span><div>NEAREST CHARGER<strong id="charger-distance">0m</strong></div><b id="charge-arrow">↑</b></div></div>
+    <div id="keyboard-hint" class="keyboard-hint"><b>WASD</b> Ride <b>SPACE</b> Boost <b>H</b> Bell <b>B</b> Banter <b>ESC</b> Pause</div>
+    <div id="touch-controls"><div id="stick" aria-label="Steering joystick"><div id="stick-thumb"></div><span>RIDE</span></div><div class="touch-actions"><button data-hold="brake" class="brake">BACK / BRAKE</button><button data-hold="boost" class="boost">ϟ</button><button data-action="horn">♬</button><button data-action="taunt">BANTER</button></div></div>
     <button id="boost-use" class="boost-use" aria-label="Use a skull boost"><span class="boost-bolt">ϟ</span><b id="boost-use-label"></b><small>×<span id="boost-count">0</span></small></button>
     <div class="news-ticker"><b>THE GRANITE BLETHER</b><div class="ticker-window"><span id="ticker">CIVIC PRIDE DAY: Council confirms absolutely nothing can go wrong.</span></div></div><div id="hit-flash" aria-hidden="true"></div><div id="gull-splat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </section>
@@ -59,5 +59,5 @@
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=932ddd9cb928"></script>
+<script type="module" src="src/app.js?v=eab55fb4e400"></script>
 </body></html>

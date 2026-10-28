@@ -1,7 +1,7 @@
-import{clamp}from'./rules.js?v=932ddd9cb928';
+import{clamp}from'./rules.js?v=eab55fb4e400';
 export class Input{
  constructor(actions){this.keys=new Set();this.touch={x:0,y:0,active:false,brake:false,boost:false};this.enabled=false;this.actions=actions;this.stick=document.querySelector('#stick');this.thumb=document.querySelector('#stick-thumb');this.pointer=null;
-  addEventListener('keydown',e=>{if(e.target.matches('select,input,button')&&e.code!=='Escape')return;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.repeat)return;this.keys.add(e.code);if(e.code==='Escape')actions.pause();if(!this.enabled)return;if(e.code==='Space'||e.code==='ShiftLeft'||e.code==='ShiftRight')actions.boost?.();if(e.code==='KeyF')actions.attack();if(e.code==='KeyH')actions.horn();if(e.code==='KeyB')actions.taunt();if(e.code==='KeyM')actions.mute();});
+  addEventListener('keydown',e=>{if(e.target.matches('select,input,button')&&e.code!=='Escape')return;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.repeat)return;this.keys.add(e.code);if(e.code==='Escape')actions.pause();if(!this.enabled)return;if(e.code==='Space'||e.code==='ShiftLeft'||e.code==='ShiftRight')actions.boost?.();if(e.code==='KeyH')actions.horn();if(e.code==='KeyB')actions.taunt();if(e.code==='KeyM')actions.mute();});
   addEventListener('keyup',e=>this.keys.delete(e.code));
   this.stick.addEventListener('pointerdown',e=>{if(!this.enabled||this.pointer!==null)return;e.preventDefault();this.pointer=e.pointerId;this.stick.setPointerCapture(e.pointerId);this.touch.active=true;this.moveStick(e);});
   this.stick.addEventListener('pointermove',e=>{if(e.pointerId===this.pointer)this.moveStick(e);});

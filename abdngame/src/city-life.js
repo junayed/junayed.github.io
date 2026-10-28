@@ -1,10 +1,10 @@
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{part,textSign,material}from'./models.js?v=932ddd9cb928';
-import{createExcavator,createFlag}from'./street-models.js?v=932ddd9cb928';
-import{addStreetChallenges}from'./street-challenges.js?v=932ddd9cb928';
-import{addNeighbourhoodLife}from'./neighbourhood-life.js?v=932ddd9cb928';
-import{GARDENS}from'./park-source-data.js?v=932ddd9cb928';
-import{shapeOf}from'./city-geometry.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{part,textSign,material}from'./models.js?v=eab55fb4e400';
+import{createExcavator,createFlag}from'./street-models.js?v=eab55fb4e400';
+import{addStreetChallenges}from'./street-challenges.js?v=eab55fb4e400';
+import{addNeighbourhoodLife}from'./neighbourhood-life.js?v=eab55fb4e400';
+import{GARDENS}from'./park-source-data.js?v=eab55fb4e400';
+import{shapeOf}from'./city-geometry.js?v=eab55fb4e400';
 export class CityLife{
  constructor(town,point){this.town=town;this.scene=town.scene;this.point=point;this.flags=[];this.beacons=[];this.toys=[];this.ships=[];this.park();this.roadworks();this.cross();this.playgrounds();this.hazards();this.vessels();this.wayfinding();addNeighbourhoodLife(this);this.playgroundActors();addStreetChallenges(town,point);}
  at(group,x,z){const p=this.point(x,z);group.position.set(p[0],0,p[1]);group.rotation.y=.7458437691155841;this.scene.add(group);return p;}

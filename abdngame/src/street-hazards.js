@@ -1,6 +1,6 @@
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{part,textSign,material}from'./models.js?v=932ddd9cb928';
-import{mergeStaticParts,disableShadows}from'./render-optimization.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{part,textSign,material}from'./models.js?v=eab55fb4e400';
+import{mergeStaticParts,disableShadows}from'./render-optimization.js?v=eab55fb4e400';
 
 // Bounded, shared geometry: no debris allocation or extra lights during a ride.
 export class StreetHazards{

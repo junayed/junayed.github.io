@@ -1,6 +1,6 @@
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=932ddd9cb928';
-import{part,material,readableTextMaterial}from'./models.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{mergeStaticParts,contactShadow,disableShadows,freezeTransforms}from'./render-optimization.js?v=eab55fb4e400';
+import{part,material,readableTextMaterial}from'./models.js?v=eab55fb4e400';
 const vehicleModels=new Map(),cycleModels=new Map(),animalModels=new Map();
 const wheel=new T.CylinderGeometry(1,1,1,12),sphere=new T.IcosahedronGeometry(1,1),cone=new T.ConeGeometry(1,1,4);
 export function createCar(color='#8b6771',police=false){const key=color+':'+police,cached=vehicleModels.get(key);if(cached){const root=cached.clone(true);return{root,body:root.getObjectByName('car-body'),wheels:[],lamps:police?[root.getObjectByName('patrol-lamp-0'),root.getObjectByName('patrol-lamp-1')]:[]};}const root=new T.Group(),body=new T.Group();root.add(body);

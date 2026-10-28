@@ -1,4 +1,4 @@
-import{MinHeap}from'./performance-utils.js?v=932ddd9cb928';
+import{MinHeap}from'./performance-utils.js?v=eab55fb4e400';
 // Static spatial index and swept circle movement, shared by rider and adults.
 export class CollisionWorld{
  constructor(bounds=[-273,216,-270,207]){this.bounds=bounds;this.cells=new Map();this.boxes=[];this.size=16;}

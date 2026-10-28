@@ -1,5 +1,5 @@
 // Geometry helpers adapted from the supplied city renderer; OSM data attribution in PROVENANCE.md.
-import * as THREE from '../vendor/three.module.js?v=932ddd9cb928';
+import * as THREE from '../vendor/three.module.js?v=eab55fb4e400';
 function shapeOf(rings){const shape=new THREE.Shape(rings[0].map(p=>new THREE.Vector2(p[0],-p[1])));for(const h of rings.slice(1))shape.holes.push(new THREE.Path(h.map(p=>new THREE.Vector2(p[0],-p[1]))));return shape}
 function geometryFrom(arrays){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(arrays.p,3));if(arrays.n)g.setAttribute('normal',new THREE.Float32BufferAttribute(arrays.n,3));else g.computeVertexNormals();if(arrays.c)g.setAttribute('color',new THREE.Float32BufferAttribute(arrays.c,3));if(arrays.a)g.setAttribute('terrainAnchor',new THREE.Float32BufferAttribute(arrays.a,2));g.computeBoundingSphere();return g}
 function mergeInto(g,a,color=null,roof=null){if(g.index){const old=g;g=g.toNonIndexed();old.dispose()}const p=g.getAttribute('position'),n=g.getAttribute('normal');for(let i=0;i<p.count;i++){a.p.push(p.getX(i),p.getY(i),p.getZ(i));if(a.n)a.n.push(n.getX(i),n.getY(i),n.getZ(i));if(a.a)a.a.push(...a.anchor);if(a.c){const c=roof&&n.getY(i)>.6?roof:color;a.c.push(c.r,c.g,c.b)}}g.dispose()}

@@ -1,17 +1,17 @@
 // Actual supplied street connections and building footprints, retained at city scale.
-import * as T from '../vendor/three.module.js?v=932ddd9cb928';
-import{optimizeTown}from'./render-optimization.js?v=932ddd9cb928';
-import{Town}from'./world.js?v=932ddd9cb928';
-import{CITY,STREET_DATA,STREET_PROPS,COAST_ENV}from'./dense-city-data.js?v=932ddd9cb928';
-import{shapeOf,geometryFrom,mergeInto,makeRoof}from'./city-geometry.js?v=932ddd9cb928';
-import{buildCollege,buildTownHouse}from'./college.js?v=932ddd9cb928';
-import{COLLEGE}from'./city-source-data.js?v=932ddd9cb928';
-import{CityLife}from'./city-life.js?v=932ddd9cb928';
-import{addCoast,COAST_SKIP_IDS}from'./coastal-landmarks.js?v=932ddd9cb928';
-import{COAST}from'./coast-data.js?v=932ddd9cb928';
-import{createFestiveCity}from'./festive-city.js?v=932ddd9cb928';
-import{CollisionWorld,inRing,polygonBlocks}from'./collision.js?v=932ddd9cb928';
-import{material,textSign,part}from'./models.js?v=932ddd9cb928';
+import * as T from '../vendor/three.module.js?v=eab55fb4e400';
+import{optimizeTown}from'./render-optimization.js?v=eab55fb4e400';
+import{Town}from'./world.js?v=eab55fb4e400';
+import{CITY,STREET_DATA,STREET_PROPS,COAST_ENV}from'./dense-city-data.js?v=eab55fb4e400';
+import{shapeOf,geometryFrom,mergeInto,makeRoof}from'./city-geometry.js?v=eab55fb4e400';
+import{buildCollege,buildTownHouse}from'./college.js?v=eab55fb4e400';
+import{COLLEGE}from'./city-source-data.js?v=eab55fb4e400';
+import{CityLife}from'./city-life.js?v=eab55fb4e400';
+import{addCoast,COAST_SKIP_IDS}from'./coastal-landmarks.js?v=eab55fb4e400';
+import{COAST}from'./coast-data.js?v=eab55fb4e400';
+import{createFestiveCity}from'./festive-city.js?v=eab55fb4e400';
+import{CollisionWorld,inRing,polygonBlocks}from'./collision.js?v=eab55fb4e400';
+import{material,textSign,part}from'./models.js?v=eab55fb4e400';
 const angle=.7458437691155841,C=Math.cos(angle),S=Math.sin(angle),anchor=[6.2530804613342745,-342.6609072727045];
 export function cityPoint(x,z){x-=anchor[0];z-=anchor[1];return[C*x+S*z,-S*x+C*z-154];}
 export function sourcePoint(x,z){z+=154;return[C*x-S*z+anchor[0],S*x+C*z+anchor[1]];}
