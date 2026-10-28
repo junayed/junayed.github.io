@@ -1,11 +1,12 @@
 import * as T from '../vendor/three.module.js';
 import{part,textSign,material}from'./models.js';
 import{createExcavator,createFlag}from'./street-models.js';
+import{addStreetChallenges}from'./street-challenges.js';
 import{addNeighbourhoodLife}from'./neighbourhood-life.js';
 import{GARDENS}from'./park-source-data.js';
 import{shapeOf}from'./city-geometry.js';
 export class CityLife{
- constructor(town,point){this.town=town;this.scene=town.scene;this.point=point;this.flags=[];this.beacons=[];this.toys=[];this.ships=[];this.park();this.roadworks();this.cross();this.playgrounds();this.hazards();this.vessels();this.wayfinding();addNeighbourhoodLife(this);this.playgroundActors();}
+ constructor(town,point){this.town=town;this.scene=town.scene;this.point=point;this.flags=[];this.beacons=[];this.toys=[];this.ships=[];this.park();this.roadworks();this.cross();this.playgrounds();this.hazards();this.vessels();this.wayfinding();addNeighbourhoodLife(this);this.playgroundActors();addStreetChallenges(town,point);}
  at(group,x,z){const p=this.point(x,z);group.position.set(p[0],0,p[1]);group.rotation.y=.7458437691155841;this.scene.add(group);return p;}
  sign(group,text,x,y,z,w=4){const m=textSign(text,{width:w,height:.55,bg:'#4b3a61',fg:'#fff1bf',font:45});m.position.set(x,y,z);group.add(m);}
  park(){const t=this.town,rings=GARDENS.rings.map(r=>r.map(p=>this.point(...p))),geo=new T.ShapeGeometry(shapeOf(rings));geo.rotateX(-Math.PI/2);geo.translate(0,.11,0);const grass=new T.Mesh(geo,material('#829775'));grass.receiveShadow=true;this.scene.add(grass);

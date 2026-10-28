@@ -6,7 +6,7 @@ export function addNeighbourhoodLife(life){
  const town=life.town;life.activities=[];life.nightDecor=[];life.playBalls=[];life.warmLights=[];
  const sphere=new T.IcosahedronGeometry(1,1),cone=new T.ConeGeometry(1,1,8);
  const glowMat=life.glowMaterial=new T.ShaderMaterial({transparent:true,depthWrite:false,blending:T.AdditiveBlending,uniforms:{tint:{value:new T.Color('#ffc17b')}},vertexShader:'varying vec2 vUv;void main(){vUv=uv;gl_Position=projectionMatrix*modelViewMatrix*vec4(position,1.);}',fragmentShader:'varying vec2 vUv;uniform vec3 tint;void main(){float d=length(vUv-.5)*2.;gl_FragColor=vec4(tint,pow(max(0.,1.-d),2.)*.45);}'});
- function anchor(g,x,y,z,kind='seated',phase=0){const marker=new T.Object3D();marker.position.set(x,y,z);marker.rotation.y=phase;g.add(marker);life.activities.push({marker,kind,phase});}
+ function anchor(g,x,y,z,kind='seated',phase=0,role='person'){const marker=new T.Object3D();marker.position.set(x,y,z);marker.rotation.y=phase;g.add(marker);life.activities.push({marker,kind,phase,role});}
  function light(g,x,z){const pool=new T.Mesh(new T.PlaneGeometry(18,18),glowMat);pool.rotation.x=-Math.PI/2;pool.position.set(x,.21,z);g.add(pool);life.nightDecor.push(pool);}
  const sites=[[-261,-102,'THE FLY CUP','#658a80'],[-174,-25,'GRANITE & GROUNDS','#77618e'],[146,-153,'A WEE SCOOP','#c98691'],[1085,-775,'SEA SALT SCOOPS','#78a6b0'],[1096,-699,'THE COASTAL CUP','#638c82'],[1145,-599,'CONE ON THEN','#d29f5e']];
  for(let index=0;index<sites.length;index++){
@@ -18,7 +18,7 @@ export function addNeighbourhoodLife(life){
   if(index%2){for(const xx of[-.7,0,.7])part(g,['#e4b8ad','#d4c494','#a68a73'][Math.round((xx+.7)/.7)],xx,1.8,.15,.36,.3,.36,sphere);}else{part(g,'#b1b9b2',-.6,1.98,0,.7,.65,.55);part(g,'#2e4244',-.6,1.95,.3,.5,.25,.05);}
   for(let i=0;i<3;i++){const xx=(i-1)*3.3,zz=3.5+(i%2)*1.5;part(g,'#b88c64',xx,.85,zz,1.6,.13,1.2);part(g,'#3e5452',xx,.43,zz,.12,.85,.12);for(const side of[-1,1]){part(g,color,xx+side*1.15,.5,zz,.6,.12,.6);part(g,color,xx+side*1.38,.85,zz,.12,.75,.65);anchor(g,xx+side*1.15,-.42,zz,'seated',side<0?Math.PI/2:-Math.PI/2);}part(g,'#fff0d3',xx+.3,1.02,zz,.13,.24,.13);if(i===1){part(g,'#f0dcaa',xx,1.8,zz,.06,3.5,.06);part(g,color,xx,3.2,zz,2.6,.6,2.6,cone);}}
   for(const xx of[-5.5,5.5]){part(g,'#a98363',xx,.4,3,.9,.8,.9);part(g,'#5e805b',xx,1.05,3,.8,.9,.8,sphere);for(let j=0;j<4;j++)part(g,j%2?'#e7bc74':'#dba0b5',xx+Math.cos(j*1.57)*.25,1.45,3+Math.sin(j*1.57)*.25,.17,.17,.17,sphere);}
-  light(g,0,3);anchor(g,0,0,-1,'vendor',Math.PI);anchor(g,2.2,0,1.9,'queue',0);
+  anchor(g,-3.2,0,1.8,'queue',0,'moneypot');light(g,0,3);anchor(g,0,0,-1,'vendor',Math.PI);anchor(g,2.2,0,1.9,'queue',0);
  }
  // More planting inside the mapped gardens, away from roads and solid footprints.
  let planted=0;

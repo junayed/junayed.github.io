@@ -22,8 +22,8 @@ export class RunState{
   this.elapsed+=dt;this.boostPower=Math.max(0,this.boostPower-dt);
   if(this.elapsed-this.lastEvent>3)this.combo=1;
   this.battery=clamp(this.battery+dt*(charging?13:-(.25+(moving?.11:0)+(boost?1.0:0))),0,100);
-  if(this.elapsed-this.lastEvent>5)this.heat=clamp(this.heat-dt*(chasing?.6:3.4),0,100);
-  this.stability=clamp(this.stability+dt*(chasing?.15:.6),0,100);
+  if(this.elapsed-this.lastEvent>5)this.heat=clamp(this.heat-dt*(chasing?Math.max(.3,.6-difficultyFor(this).level*.1):3.4),0,100);
+  this.stability=clamp(this.stability+dt*(chasing?0:.45),0,100);
  }
 }
 export const INCIDENTS={
@@ -51,3 +51,6 @@ export function chooseHeadline(run,cause){
 }
 
 export function driveSpeed(speed,dt,{gas=false,brake=false,boost=false,powered=false}={}){if(brake)return speed>.3?Math.max(0,speed-dt*26):Math.max(-5.5,speed-dt*7);if(gas)return Math.min(powered?29:boost?23:14,speed+dt*(boost?18:10));return speed>=0?Math.max(0,speed-dt*4.2):Math.min(0,speed+dt*4.2);}
+
+// Pressure is earned through sustained chaos; a quiet ride never escalates by time alone.
+export function difficultyFor(run){const heat=run?.heat||0,score=run?.score||0,time=run?.elapsed||0;const level=heat<15?0:time>=150&&score>=900?3:time>=75&&score>=350?2:time>=30&&score>=100?1:0;return {level,extraChasers:level*2,speedBonus:level*.35,windup:.68-level*.06,attackCooldown:1.8-level*.15,policeLead:level*.3};}

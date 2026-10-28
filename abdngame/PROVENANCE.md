@@ -44,3 +44,5 @@ Super Chips, Open Sans, Comic Neue Bold and the replacement official Share Tech 
 
 - Editorial masthead: original fictional Granite Blether title rendered with UnifrakturCook Bold (SIL OFL; font and license under assets/fonts). P&J / DC Thomson supplied visual inspiration only: https://www.dcthomson.co.uk/brands/the-press-journal/ . No publisher logo or trademark artwork copied.
 - Additional café carts, furniture, planting, activity anchors, road shaders and night pools are original procedural geometry / code in src/neighbourhood-life.js and related game modules.
+
+- Character refresh: original procedural geometry and instanced animation, using the user’s supplied images solely as style references. No game models, textures or screenshots from those references are bundled. MoneyPot banners are original procedural text assets; no advertising service is integrated.
