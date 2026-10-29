@@ -1,0 +1,182 @@
+{
+  "project": "ScotRick",
+  "title": "Fit Like?",
+  "status": "local-playable-temporary-audio",
+  "notes": [
+    "Copied with user authorization for local prototyping. No audio has been auditioned in this planning pass.",
+    "Gameplay roles are provisional, based on filenames and inspected source call sites.",
+    "No separate soundtrack/music file was found among these 14 clips."
+  ],
+  "clips": [
+    {
+      "id": "impact.prop",
+      "path": "assets/audio/temporary-bangla/cartoon-impact.342c6d67d0.mp3",
+      "sha256": "342c6d67d0ebaf80c3b8ea9c9e844b07dd5cfb704dee9396f681d9666ebffbad",
+      "duration_seconds": 2.448,
+      "intended_role": "Short comic prop collision",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "run.caught",
+      "path": "assets/audio/temporary-bangla/crash-meme.bd610be0ab.mp3",
+      "sha256": "bd610be0ab672f1842dfe6f66a78c7dca4717333af8f180f9b10fdf9630490bf",
+      "duration_seconds": 3.362,
+      "intended_role": "Crash/caught reaction sting",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "vehicle.horn",
+      "path": "assets/audio/temporary-bangla/horn-meme.168251df6a.mp3",
+      "sha256": "168251df6ae6b667e188e5e762fe44fe946a36af4cd1b8a23646768bc5a6797b",
+      "duration_seconds": 2.0,
+      "intended_role": "Comic horn/bell",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "voice.laugh",
+      "path": "assets/audio/temporary-bangla/laugh.e62c96e6f2.mp3",
+      "sha256": "e62c96e6f2ebec245f5875b56b861402745313e188afb1943154592d2a2b705c",
+      "duration_seconds": 1.92,
+      "intended_role": "Spectator laughter",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "voice.encounter",
+      "path": "assets/audio/temporary-bangla/masud.0bd9f2f209.mp3",
+      "sha256": "0bd9f2f2091da4b8cc5ddac89b3659cf83878eedbc0f1f56961639e9a5a22154",
+      "duration_seconds": 3.5,
+      "intended_role": "Special encounter / official reaction; original bundle bribe cue",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "crowd.alert.01",
+      "path": "assets/audio/temporary-bangla/mob-shout-1.bf532c5410.mp3",
+      "sha256": "bf532c54105605d1088165f5489e6aeb8ce55cf5eeda8d9ae7611721b1c26ee8",
+      "duration_seconds": 4.05,
+      "intended_role": "Crowd notices trouble",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "crowd.alert.02",
+      "path": "assets/audio/temporary-bangla/mob-shout-2.b7f33650be.mp3",
+      "sha256": "b7f33650be9e04eab172d98542fcc3f6f8c009dbd0faa6370c89b2ef946522a0",
+      "duration_seconds": 1.55,
+      "intended_role": "Crowd joins pursuit",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "crowd.alert.03",
+      "path": "assets/audio/temporary-bangla/mob-shout-3.8bdd12b4d2.mp3",
+      "sha256": "8bdd12b4d2d68d963dd192733198d9541d3d41dc8efcf6b8e193bd367d87b663",
+      "duration_seconds": 2.75,
+      "intended_role": "Crowd catches up",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "impact.person",
+      "path": "assets/audio/temporary-bangla/punch.4d481891d1.mp3",
+      "sha256": "4d481891d16775a2b7049dfe3f52872787fd0fe868afa564b4e7b46d66c35b69",
+      "duration_seconds": 0.64,
+      "intended_role": "Cartoon person hit / retaliation",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "voice.complaint",
+      "path": "assets/audio/temporary-bangla/rag-korla.04fd093dec.mp3",
+      "sha256": "04fd093decfaa77c50c4fa36d6a2a400b5abbfafbd1c6e9f8d4866c687dceac1",
+      "duration_seconds": 0.747,
+      "intended_role": "Angry reaction placeholder",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "taunt.01",
+      "path": "assets/audio/temporary-bangla/sound-bomb-1.cfb2174540.mp3",
+      "sha256": "cfb217454029dfd40e607d3eb31372d82d497e1110525db1d0406d906157d82f",
+      "duration_seconds": 16.576,
+      "intended_role": "Player comic taunt",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "taunt.02",
+      "path": "assets/audio/temporary-bangla/sound-bomb-2.7fc51ef4a1.mp3",
+      "sha256": "7fc51ef4a15471580e3928beed0147ee8d660d272cd6af5084e33e139beddfa0",
+      "duration_seconds": 4.351,
+      "intended_role": "Player comic taunt",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "taunt.03",
+      "path": "assets/audio/temporary-bangla/sound-bomb-3.8a9ab6e6b9.mp3",
+      "sha256": "8a9ab6e6b927b41230192c710cda57b0e3da33fd4750f7f92593374b3d1abb8d",
+      "duration_seconds": 4.599,
+      "intended_role": "Player comic taunt",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    },
+    {
+      "id": "taunt.04",
+      "path": "assets/audio/temporary-bangla/sound-bomb-4.85f2ce82c4.mp3",
+      "sha256": "85f2ce82c405465f7520d20df2e144d44165f40f32eff21ddb69778f0f74a4b6",
+      "duration_seconds": 4.5,
+      "intended_role": "Player comic taunt",
+      "temporary": true,
+      "language": "bn-or-nonverbal-unreviewed",
+      "auditioned": false,
+      "replacement_status": "needed",
+      "release_clearance": "not-established-by-copy"
+    }
+  ],
+  "replacement_files_for_current_bank": 14,
+  "expanded_collection_event_slots": 33
+}

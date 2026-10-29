@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#3d1f57">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Fit Like v2">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/branding/app-icon-180.png">
+  <meta name="description" content="Nae peace. Low battery. A very silly scooter ride through a very respectable granite town.">
+  <title>Fit Like? — Nae peace. Low battery.</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="assets/fonts/OpenSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/SuperChips.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css?v=449e450eb95d">
+</head>
+<body>
+<main id="app">
+  <canvas id="world" aria-label="Three-dimensional scooter game"></canvas>
+  <div class="scene-grade" aria-hidden="true"></div>
+  <div id="loading" class="loading menu" aria-label="Loading the town"><div class="loading-backdrop" aria-hidden="true"></div><header class="menu-header loading-header" aria-hidden="true"><div class="menu-header-tools"><span class="loading-weather-space"></span><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header><div class="hero"><img class="hero-logo" src="assets/branding/fit-like-logo-1300.png" srcset="assets/branding/fit-like-logo-700.png 700w, assets/branding/fit-like-logo-1300.png 1300w" sizes="(max-width:700px) 90vw, (max-height:540px) 270px, 650px" alt="Fit Like?"><div class="loading-status"><div class="lx-card" role="status" aria-live="polite"><div class="lx-row"><span class="lx-label" data-loading-label>Polishing the granite…</span><b class="lx-pct">0%</b></div><div class="lx-track"><i class="lx-fill"><svg class="lx-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 4 14h7l-1.5 8L20 10h-7Z"/></svg></i></div><p class="lx-tip"><b>TIP ·</b> <span class="lx-tip-text">Stop inside a green charge ring and hold still to recharge.</span></p></div><p id="boot-error" hidden></p></div></div><footer class="menu-footer loading-footer" aria-hidden="true"></footer></div>
+
+  <section id="menu" class="menu" hidden aria-label="Main menu">
+    <header class="menu-header"><div class="menu-header-tools"><button id="menu-weather" class="weather-button" aria-label="Weather and settings" title="Weather and settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><path d="M8 1v2M1 8h2M3 3l1.5 1.5M13 3l-1.5 1.5M5 19a4 4 0 0 1 0-8 5 5 0 0 1 9-1 4.5 4.5 0 1 1 2 9Z"/></svg></button><span class="issue-tag">A VERY QUIET TOWN. FOR NOW.</span></div></header>
+    <div class="hero">
+      <div class="eyebrow"><span></span> ONE WEE LAP. FIT COULD HAPPEN?</div>
+      <img class="hero-logo" src="assets/branding/fit-like-logo-1300.png" srcset="assets/branding/fit-like-logo-700.png 700w, assets/branding/fit-like-logo-1300.png 1300w" sizes="(max-width:700px) 90vw, (max-height:540px) 270px, 650px" alt="Fit Like?">
+      <h1>NAE PEACE. <em>LOW BATTERY.</em></h1>
+      <p class="hero-copy">Big granite. Wee wheels. Terrible decisions.</p><label class="start-place-label" for="start-place">START A WEE SCENE IN <select id="start-place" aria-label="Starting neighbourhood"></select></label>
+      <div class="play-row"><button id="play" class="button yellow">AWAY YE GO <span>↗︎</span></button><div class="best"><span>PERSONAL NONSENSE</span><strong id="menu-best">0</strong></div></div>
+      
+    </div>
+    <aside class="forecast"><span class="mini-label">TODAY'S VERY LOCAL FORECAST</span><div><strong id="forecast-label">Granite grey.</strong><span class="weather-symbol">☁</span></div><p id="forecast-joke">A fine day for staying in. So naturally…</p><span class="forecast-instruction">CHANGE WITH THE WEATHER ICON ↗︎</span></aside>
+    <div id="town-progress" class="town-progress" role="status" hidden><i aria-hidden="true"><b></b></i><span>Building the far side of town · 0%</span></div>
+    <footer class="menu-footer"><div class="menu-footer-actions"><button id="show-controls">ALL CONTROLS ↗︎</button><span aria-hidden="true">·</span><button data-dialog="disclaimer">DISCLAIMER</button></div></footer>
+  </section>
+
+  <section id="hud" hidden aria-label="Game dashboard">
+    <div class="hx-stack">
+      <div class="hx-place"><svg class="hx-i hx-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.5s-6.5-6-6.5-11.5a6.5 6.5 0 0 1 13 0c0 5.5-6.5 11.5-6.5 11.5Z"/><circle cx="12" cy="10" r="2.3"/></svg><span id="district" class="hx-place-name">The Wee Lanes</span><button id="chase-toggle" class="hx-chevron" aria-label="Show pursuit details" aria-expanded="false"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button></div>
+      <div class="hx-card hx-pursuit"><b id="chase-status">NO LOCALS CHASING</b><span id="hide-status">KEEP IT QUIET. AYE RIGHT.</span><span id="foot-police"></span><span id="heat-label">HEAT · KEEP IT QUIET</span></div>
+      <div class="hx-card hx-score"><strong id="score">0</strong><span class="hx-cp">CP</span><span id="combo" class="hx-combo" hidden>×2</span><i class="hx-sep" aria-hidden="true"></i><svg class="hx-i hx-wrench" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 6.4a4.2 4.2 0 0 0-5.3 5.3L3.5 17.5l3 3 5.8-5.8a4.2 4.2 0 0 0 5.3-5.3l-2.7 2.7-2.6-.4-.4-2.6Z"/></svg><span id="bill">£0</span></div>
+      <div id="life-card" class="hx-card hx-vitals">
+        <div class="hx-cell hx-chase" title="Locals chasing"><span class="hx-v"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle class="hx-dot" cx="12" cy="12" r="1.2"/></svg><b id="chase-count">00</b></span><span class="hx-bar hx-heat"><i id="heat-fill"></i></span></div>
+        <div class="hx-cell hx-life" title="Life"><span class="hx-v"><svg class="hx-i hx-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.5c0 5.8-7.5 10.4-7.5 10.4Z"/></svg><b id="balance">100%</b></span><span class="hx-bar"><i id="life-fill"></i></span></div>
+        <div class="hx-cell hx-battery" title="Battery"><span class="hx-v"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="16.5" height="10" rx="2.2"/><path d="M21.5 10.5v3"/><path class="hx-fill-path" d="m11.6 8.6-2.8 4h3l-1.4 2.8 3-4h-3Z"/></svg><b id="battery">100<small>%</small></b></span><span class="hx-bar"><i id="battery-fill"></i></span></div>
+        <div class="hx-boost-row"><span id="boost-status"></span><span class="hx-bar"><i id="boost-fill"></i></span></div>
+      </div>
+      <div id="scaffold-progress" class="hx-pill hx-scaffold"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18M19 3v18M5 7.5h14M5 13.5h14M5 19.5h14M5 7.5l14 6"/></svg><span>Scaffolds</span><b id="scaffold-count">0/3</b></div>
+      <div id="wanted" class="hx-pill hx-wanted" hidden></div>
+    </div>
+    <div class="hx-right">
+      <div class="hx-map">
+        <div class="hx-map-view"><canvas id="minimap" width="200" height="200" aria-label="Town map: purple rider, gold nearest charger, rose chasers and blue police"></canvas><button id="map-zoom" class="hx-zoom" aria-label="Show whole town map">Town</button></div>
+        <div class="hx-map-foot" title="Nearest charger"><svg class="hx-i hx-fill hx-star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L3 9.4l6.2-.9Z"/></svg><strong id="charger-distance">0m</strong><span class="hx-foot-label">to charge</span><b id="charge-arrow" aria-hidden="true"><svg class="hx-i hx-fill" viewBox="0 0 24 24"><path d="M12 2.5 19.5 21 12 16.8 4.5 21Z"/></svg></b></div>
+      </div>
+      <div class="hx-tools">
+        <button id="night" class="hx-round" aria-label="Switch day or night"><svg class="hx-i hx-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6Z"/></svg><svg class="hx-i hx-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></button>
+        <button id="mute" class="hx-round" aria-label="Mute audio"><svg class="hx-i hx-note" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg><svg class="hx-i hx-muted" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/><path d="M3 3l18 18"/></svg></button>
+        <button id="pause" class="hx-round" aria-label="Pause game"><svg class="hx-i hx-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5v13M15 5.5v13"/></svg></button>
+      </div>
+    </div>
+    <div class="hx-messages"><div id="notice" class="notice" hidden></div><div id="bark" class="bark" hidden></div></div><div id="charge-hint" class="charge-hint" hidden>ϟ HOLD STILL TO CHARGE</div>
+    <div id="keyboard-hint" class="keyboard-hint"><b>WASD</b> Ride <b>SPACE</b> Boost <b>H</b> Bell <b>B</b> Banter <b>ESC</b> Pause</div>
+    <div id="touch-controls"><div id="stick" aria-label="Joystick: up to ride, left and right to steer, down to brake or reverse"><svg class="stick-arrows" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 58 18H42Z"/><path d="M50 92 58 82H42Z"/><path d="M8 50 18 42V58Z"/><path d="M92 50 82 42V58Z"/></svg><div id="stick-thumb"></div></div><div class="touch-actions"><button data-action="taunt" aria-label="Banter"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 3.5v-3.5H4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg></button></div></div>
+    <button id="boost-use" class="hx-boost-btn" data-hold="boost" aria-label="Hold to boost"><svg class="hx-i hx-fill hx-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 4 14h7l-1.5 8L20 10h-7Z"/></svg><b id="boost-use-label"></b><small class="hx-badge">×<span id="boost-count">0</span></small></button>
+    <div class="news-ticker"><b>THE GRANITE BLETHER</b><div class="ticker-window"><span id="ticker">CIVIC PRIDE DAY: Council confirms absolutely nothing can go wrong.</span></div></div><div id="hit-flash" aria-hidden="true"></div><div id="gull-splat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+  </section>
+
+  <section id="pause-panel" class="overlay" hidden aria-label="Paused">
+    <div class="pause-card"><span class="eyebrow">THE TOWN CAN WAIT.</span><h2>Haud on.</h2><p>Catch yer breath. They probably need to as well.</p><div class="settings-grid"><label>THE WEATHER<select id="weather"><option value="grey">Granite grey</option><option value="sunny">Rare sunshine</option><option value="drizzle">A wee drizzle</option><option value="rain">Proper rain</option><option value="haar">Coastal haar</option><option value="snow">Snow business</option></select></label><label>THE LIGHT<select id="time"><option value="day">Daytime</option><option value="night">After dark</option></select></label><label>THE CROWD<select id="density"><option value="busy">Busy</option><option value="everyday">Everyday</option></select></label><label>THE GRAPHICS<select id="quality"><option value="normal">Full of character</option><option value="light">A lighter touch</option></select></label></div><label class="check"><input id="reduced-motion" type="checkbox"> Gentler camera effects</label><p class="audio-note">Temporary Bangla voices are in use. Local voices and music arrive later.</p><button id="resume" class="button yellow">BACK AT IT ↗︎</button><button id="restart" class="text-button">START A FRESH LAP</button><button id="finish-ride" class="text-button">CALL IT A DAY · SEE THE FRONT PAGE</button><button id="home" class="text-button">BACK TO THE START</button></div>
+  </section>
+
+  <section id="paper" class="overlay np-overlay" hidden aria-label="Your front page"><div class="np-wrap"><article class="np-page"><header class="np-mast"><div class="np-ear"><small>PUBLIC PATIENCE</small><b id="paper-patience">EXHAUSTED</b></div><div class="np-title"><span class="np-name">The Granite Blether</span><small>ALL THE NEWS. MOST OF THE FACTS.</small></div><div class="np-ear"><small>WEATHER</small><b id="paper-weather">STILL THERE</b></div></header><div class="np-folio"><span id="paper-date">TONIGHT'S SPECIAL EDITION</span><span class="np-motto">THE VOICE OF A SLIGHTLY ANNOYED TOWN</span><span>ONE FLY CUP</span></div><p class="np-kicker">ONE WEE LAP, APPARENTLY</p><h2 id="headline" class="np-headline"></h2><div class="np-main"><figure class="np-photo"><div class="np-frame"><img id="paper-image" alt="The final scene of your ride"><div class="np-stamp"><small>COUNCIL BILL</small><strong id="paper-bill">£0</strong></div></div><figcaption>A bystander was already recording. Obviously.<span>PHOTO: A BYSTANDER</span></figcaption></figure><div class="np-body"><p id="paper-story" class="np-story"></p><aside class="np-side"><span class="np-label">IT COULD HAVE PAID FOR</span><h3 id="paper-comparison"></h3><blockquote id="paper-quote"></blockquote></aside></div></div><div id="paper-stats" class="np-stats"></div><p class="np-foot">A committee has been formed. The clipboard remains missing.</p></article><footer class="np-actions"><button id="again" class="button yellow">AGAIN, THEN? ↗︎</button><button id="save-paper" class="button outline">SAVE FRONT PAGE ↓</button><button id="paper-home" class="button outline np-home" aria-label="Home" title="Home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 11.5 12 4.5l8.5 7"/><path d="M6 10v9.5h4.5v-5.5h3v5.5H18V10"/></svg></button><strong id="paper-score"></strong></footer></div></section>
+
+  <div id="comic-layer" aria-hidden="true"></div>
+  <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
+  <div id="toast" role="status" hidden></div>
+</main>
+<script type="module" src="src/app.js?v=449e450eb95d"></script>
+</body></html>
