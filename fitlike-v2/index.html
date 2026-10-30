@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/OpenSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/SuperChips.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=788bd0cc563c">
+  <link rel="stylesheet" href="style.css?v=cbac3263dac0">
 </head>
 <body>
 <main id="app">
@@ -45,8 +45,9 @@
       <div class="hx-card hx-score"><strong id="score">0</strong><span class="hx-cp">CP</span><span id="combo" class="hx-combo" hidden>×2</span><i class="hx-sep" aria-hidden="true"></i><svg class="hx-i hx-wrench" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 6.4a4.2 4.2 0 0 0-5.3 5.3L3.5 17.5l3 3 5.8-5.8a4.2 4.2 0 0 0 5.3-5.3l-2.7 2.7-2.6-.4-.4-2.6Z"/></svg><span id="bill">£0</span></div>
       <div id="life-card" class="hx-card hx-vitals">
         <div class="hx-cell hx-chase" title="Locals chasing"><span class="hx-v"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle class="hx-dot" cx="12" cy="12" r="1.2"/></svg><b id="chase-count">00</b></span><span class="hx-bar hx-heat"><i id="heat-fill"></i></span></div>
-        <div class="hx-cell hx-life" title="Life"><span class="hx-v"><svg class="hx-i hx-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.4A4.2 4.2 0 0 1 12 7.6a4.2 4.2 0 0 1 7.5 2.5c0 5.8-7.5 10.4-7.5 10.4Z"/></svg><b id="balance">100%</b></span><span class="hx-bar"><i id="life-fill"></i></span></div>
+        <div class="hx-cell hx-life" title="Hearts"><div id="hearts" class="hx-hearts" role="img" aria-label="5 hearts"><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i></div></div>
         <div class="hx-cell hx-battery" title="Battery"><span class="hx-v"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="16.5" height="10" rx="2.2"/><path d="M21.5 10.5v3"/><path class="hx-fill-path" d="m11.6 8.6-2.8 4h3l-1.4 2.8 3-4h-3Z"/></svg><b id="battery">100<small>%</small></b></span><span class="hx-bar"><i id="battery-fill"></i></span></div>
+        <div id="stars" class="hx-stars" role="img" aria-label="0 stars"><i></i><i></i><i></i><i></i><i></i></div>
         <div class="hx-boost-row"><span id="boost-status"></span><span class="hx-bar"><i id="boost-fill"></i></span></div>
       </div>
       <div id="scaffold-progress" class="hx-pill hx-scaffold"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v18M19 3v18M5 7.5h14M5 13.5h14M5 19.5h14M5 7.5l14 6"/></svg><span>Scaffolds</span><b id="scaffold-count">0/3</b></div>
@@ -65,9 +66,9 @@
     </div>
     <div class="hx-messages"><div id="notice" class="notice" hidden></div><div id="bark" class="bark" hidden></div></div><div id="charge-hint" class="charge-hint" hidden>ϟ HOLD STILL TO CHARGE</div>
     <div id="keyboard-hint" class="keyboard-hint"><b>WASD</b> Ride <b>SPACE</b> Boost <b>H</b> Bell <b>B</b> Banter <b>ESC</b> Pause</div>
-    <div id="touch-controls"><div id="stick" aria-label="Joystick: up to ride, left and right to steer, down to brake or reverse"><svg class="stick-arrows" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 58 18H42Z"/><path d="M50 92 58 82H42Z"/><path d="M8 50 18 42V58Z"/><path d="M92 50 82 42V58Z"/></svg><div id="stick-thumb"></div></div><div class="touch-actions"><button data-action="taunt" aria-label="Banter"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 3.5v-3.5H4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg></button></div></div>
+    <div id="touch-controls"><div id="stick" aria-label="Joystick: up to ride, left and right to steer, down to brake or reverse"><svg class="stick-arrows" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 8 58 18H42Z"/><path d="M50 92 58 82H42Z"/><path d="M8 50 18 42V58Z"/><path d="M92 50 82 42V58Z"/></svg><div id="stick-thumb"></div></div><div class="touch-actions"><button data-action="horn" aria-label="Bell"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5.5 5.5 0 0 0-5.5 5.5V14l-2 3h15l-2-3V9.5A5.5 5.5 0 0 0 12 4Z"/><path d="M10 19.5a2 2 0 0 0 4 0"/></svg></button><button data-action="taunt" aria-label="Banter"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 3.5v-3.5H4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg></button></div></div>
     <button id="boost-use" class="hx-boost-btn" data-hold="boost" aria-label="Hold to boost"><svg class="hx-i hx-fill hx-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 4 14h7l-1.5 8L20 10h-7Z"/></svg><b id="boost-use-label"></b><small class="hx-badge">×<span id="boost-count">0</span></small></button>
-    <div class="news-ticker"><b>THE GRANITE BLETHER</b><div class="ticker-window"><span id="ticker">CIVIC PRIDE DAY: Council confirms absolutely nothing can go wrong.</span></div></div><div id="hit-flash" aria-hidden="true"></div><div id="gull-splat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="news-ticker"><b>THE GRANITE BLETHER</b><div class="ticker-window"><span id="ticker">CIVIC PRIDE DAY: Council confirms absolutely nothing can go wrong.</span></div></div><div id="hit-flash" aria-hidden="true"></div><div id="beat-ring" hidden aria-hidden="true"><i></i></div><div id="gull-splat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
   </section>
 
   <section id="pause-panel" class="overlay" hidden aria-label="Paused">
@@ -80,5 +81,5 @@
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=788bd0cc563c"></script>
+<script type="module" src="src/app.js?v=cbac3263dac0"></script>
 </body></html>
