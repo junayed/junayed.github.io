@@ -236,8 +236,16 @@ dialog{border:1px solid #ab79c6;background:#352044;color:var(--cream);border-rad
 @media(prefers-reduced-motion:reduce){.ticker-window>span{animation:none;padding-left:12px}}
 #comic-layer{position:fixed;inset:0;pointer-events:none;overflow:hidden}
 .comic-word{position:absolute;left:0;top:0;color:var(--yellow);font:400 34px/1 'Super Chips','Open Sans',sans-serif;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;-webkit-text-stroke:5px #421654;paint-order:stroke fill;text-shadow:3px 4px 0 #351149;will-change:transform,opacity}
-.comic-word.pink{color:#ff9ccb}
-.comic-word.mint{color:#c0f3b4}
+.comic-word.pink,.comic-word.hurt{color:#ff8fc4;-webkit-text-stroke:5px #fff;text-shadow:3px 4px 0 #6d2d91}
+.comic-word.mint,.comic-word.heal{color:#c0f3b4}
+.comic-word.special{background:repeating-linear-gradient(135deg,#e8379f 0 6px,#8d1f70 6px 10px);-webkit-background-clip:text;background-clip:text;color:transparent}
+.comic-word.rare{background:linear-gradient(100deg,#b8860b,#ffe27a 38%,#fff8cf 50%,#e8a91f 62%,#b8860b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.comic-word::before{content:'';position:absolute;inset:-12px -20px;z-index:-1;background:#ffffff2e;clip-path:polygon(0 50%,8% 30%,3% 8%,20% 20%,30% 0,42% 18%,55% 2%,65% 20%,80% 4%,86% 26%,100% 38%,92% 56%,100% 78%,82% 78%,76% 100%,60% 84%,46% 100%,34% 82%,18% 96%,14% 74%)}
+.score-pop{position:absolute;left:0;top:0;font:800 15px/1 'Open Sans',sans-serif;color:#fff;-webkit-text-stroke:3px #421654;paint-order:stroke fill;will-change:transform,opacity}
+#speed-lines{position:fixed;inset:0;pointer-events:none;opacity:0;transition:opacity .2s;background:repeating-conic-gradient(from 0deg at 50% 60%,transparent 0 5deg,#ffffff70 5deg 5.7deg,transparent 5.7deg 12deg);-webkit-mask:radial-gradient(ellipse at 50% 60%,transparent 40%,#000 88%);mask:radial-gradient(ellipse at 50% 60%,transparent 40%,#000 88%)}
+.fly{position:fixed;left:0;top:0;z-index:5;pointer-events:none;font:800 20px/1 'Open Sans',sans-serif;will-change:transform,opacity;-webkit-text-stroke:2px #fff;paint-order:stroke fill}
+.bump{animation:hx-bump .3s ease-out}@keyframes hx-bump{40%{transform:scale(1.28)}}
+.hx-coins{padding:3px 7px;border-radius:999px;background:#fff2c2;color:#9a6b00;font:800 10px/1 'Open Sans',sans-serif}
 
 /* Touch controls: smaller and see-through so the street shows behind them. */
 #touch-controls{display:none}

@@ -1,7 +1,7 @@
 {
   "title": "Fit Like?",
   "version": "2.0.0-dev",
-  "build": "cbac3263dac0",
+  "build": "27594f39ec30",
   "bundled": true,
   "files": {
     ".nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -34,12 +34,12 @@
     "assets/fonts/SuperChips.woff2": "2a8d0d975be5bfdf36b58be07482b67796563a458b33251967a16e68e3e995df",
     "assets/fonts/UnifrakturCook-Bold.woff2": "8495cbc8bf995eb2d87f2f07bc0d5e677dc851ccc69d4b6357d264f5f7585131",
     "assets/fonts/UnifrakturCook-OFL.txt": "b8500bc315739003724b1b61e20e8a362de9577e791f1e0a2a7752d0362e1e54",
-    "index.html": "ef011a1aae648c1df21c7f8acf86a96317c3ff27b11fa431c8a4069c8e545ba9",
+    "index.html": "44a2c1e88b4e6cd701cf8ed09a902714431aa79571687fade6834ad6c6e75460",
     "manifest.webmanifest": "305843d8294ce9614e16c42fbdc2d67594b42d7e26414d4ccf6e5fe046c38935",
     "planning/audio-manifest.json": "23515d7a4a536d55f7c195380ca0b6e14de83347a453523d9f16ef7a7adf0d2e",
     "PROVENANCE.md": "a8a0751b247f498062ea181c610ee55717ebe02d2638d3d25b4b27858c065e4f",
-    "src/app.js": "ce061bb517ca8ece4a491e044b93bb0760cb8b447ce8af15b11b24b9162af6ee",
+    "src/app.js": "159a1f694aa680c1ec0e42c2eaf52d1a4c0529ceb72532d4b8f85c5fa71b178f",
     "src/THREE-LICENSE.txt": "df2a91696186fe58c92518a25d48bc59c8ee2edc7cac9ca6d19a5a0d599a2a05",
-    "style.css": "948f1895742985cc7f10682eab339329ececa8617e702dd291ee2b61e1f18893"
+    "style.css": "8a9498bd15912d1bb7663004ceb26fc724fef7ab3157a90778fe8840481e3247"
   }
 }
