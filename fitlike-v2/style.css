@@ -168,7 +168,7 @@ dialog{border:1px solid #ab79c6;background:#352044;color:var(--cream);border-rad
 .hx-coins{padding:3px 7px;border-radius:999px;background:#fff2c2;color:#9a6b00;font:800 10px/1 'Open Sans',sans-serif}
 /* HUD v2 (hx-): one vitals card, a heading-up map with the place name inside, edge arrows, a floating stick. Phone-first sizes (390 × 844); see tuning.hud. */
 #hud{--ctl-scale:1;--ctl-opacity:.85;--bar:calc(20px + env(safe-area-inset-bottom));--base:calc(var(--bar) + 18px);--top:max(8px,env(safe-area-inset-top));--side:max(8px,env(safe-area-inset-left))}
-.hx-vitals{position:absolute;top:var(--top);left:var(--side);width:min(46vw,176px);display:grid;gap:4px;padding:6px 8px 5px;background:var(--hx-card);border:1px solid var(--hx-line);border-radius:12px;box-shadow:0 3px 10px #2a173e1a}
+.hx-vitals{position:absolute;top:var(--top);left:var(--side);width:max-content;min-width:min(46vw,176px);max-width:58vw;display:grid;gap:4px;padding:6px 8px 5px;background:var(--hx-card);border:1px solid var(--hx-line);border-radius:12px;box-shadow:0 3px 10px #2a173e1a}
 .hx-r1,.hx-r2,.hx-r3{display:flex;align-items:center;gap:7px;min-width:0}
 .hx-r1{justify-content:space-between;height:16px}.hx-r2{height:18px;justify-content:space-between}.hx-r3{height:20px;transition:opacity .5s}
 .hx-hearts{display:flex;gap:1.5px;align-items:center}
@@ -280,7 +280,7 @@ dialog{border:1px solid #ab79c6;background:#352044;color:var(--cream);border-rad
 #hud.st-hit .hx-hearts{animation:hx-shake .3s}@keyframes hx-shake{25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
 #hud.st-stooshie:after{content:'';position:absolute;inset:0;border:6px solid;border-image:repeating-linear-gradient(45deg,#e8379f 0 8px,#2a173e 8px 14px,#ffdc19 14px 18px) 1;pointer-events:none}
 @media(prefers-reduced-motion:reduce){.hx-gasp,#hud.st-low .hx-battery,#hud.st-hit .hx-hearts,.hx-stooshie{animation:none}}
-@media(min-width:900px){.hx-vitals{width:200px;padding:8px 10px}.hx-map{width:128px;height:128px}}
+@media(min-width:900px){.hx-vitals{min-width:200px;padding:8px 10px}.hx-map{width:128px;height:128px}}
 /* Pause: night, sound and the control choices live here. */
 .pz-quick{display:flex;gap:8px;margin:8px 0}
 .pz-toggle{display:flex;align-items:center;justify-content:center;gap:6px;flex:1;padding:9px 10px;border:1px solid #ffffff40;border-radius:999px;background:#ffffff14;color:#fff5da;font:800 12px/1 'Open Sans',sans-serif}
