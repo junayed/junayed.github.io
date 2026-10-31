@@ -539,3 +539,12 @@ html[data-calm='1'] .rd-demo i{animation-duration:3s!important}
 .hx-stooshie .hx-sl{position:absolute;left:50%;bottom:calc(100% + 4px);transform:translateX(-50%);padding:2px 6px;border-radius:6px;background:#e8379f;color:#fff;font:800 9px/1 'Open Sans',sans-serif;letter-spacing:.6px;white-space:nowrap;pointer-events:none}
 /* The vitals card never lets a number spill out of it. */
 .hx-vitals,.hx-vitals *{white-space:nowrap}
+/* M11: the new moves. The grind's balance bar (steer against the lean) and the camera flash of a Snap. */
+.hx-grind{position:absolute;left:50%;bottom:36%;width:120px;height:12px;margin-left:-60px;border-radius:999px;background:#2b163dcc;border:1px solid #bc92d2;pointer-events:none}
+.hx-grind[hidden]{display:none}
+.hx-grind::before{content:'';position:absolute;left:50%;top:-3px;width:2px;height:16px;margin-left:-1px;background:#fff5da99}
+.hx-grind i{position:absolute;left:50%;top:50%;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#ffdc19;border:2px solid #4a1f6a}
+#snap-flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:4}
+#snap-flash.go{animation:snapflash .28s ease-out}
+@keyframes snapflash{0%{opacity:.85}100%{opacity:0}}
+html[data-calm='1'] #snap-flash.go{animation-duration:.6s;background:#fff8}

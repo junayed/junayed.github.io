@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/OpenSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/SuperChips.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=e5b120b14cf6">
+  <link rel="stylesheet" href="style.css?v=43feecf3cd8a">
 </head>
 <body>
 <main id="app">
@@ -51,12 +51,12 @@
       <button id="pause" class="hx-round" aria-label="Pause game"><svg class="hx-i hx-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5.5v13M15 5.5v13"/></svg></button>
     </div>
     <div id="combo-meter" class="hx-combo-meter" hidden><b id="combo">×2</b><span class="hx-bar"><i id="combo-fill"></i></span><span class="hx-stooshie-bar" aria-hidden="true"><i id="stooshie-fill"></i></span></div><div id="gasp-count" class="hx-gasp" hidden>15</div>
-    <div class="hx-messages"><div id="notice" class="notice" hidden></div><div id="bark" class="bark" hidden></div></div><div id="charge-hint" class="charge-hint" hidden>ϟ HOLD STILL TO CHARGE</div>
+    <div class="hx-messages"><div id="notice" class="notice" hidden></div><div id="bark" class="bark" hidden></div></div><div id="charge-hint" class="charge-hint" hidden>ϟ HOLD STILL TO CHARGE</div><div id="grind-gauge" class="hx-grind" hidden aria-hidden="true"><i id="grind-bubble"></i></div><div id="snap-flash" aria-hidden="true"></div>
     <div id="edges" class="hx-edges" aria-hidden="true"></div>
     <div id="keyboard-hint" class="keyboard-hint"><b>WASD</b> Ride <b>SPACE</b> Boost <b>E</b> Hop <b>H</b> Bell <b>B</b> Banter <b>ESC</b> Pause</div>
     <div id="thumb-hint" class="hx-thumb-hint" aria-hidden="true"><i></i><span>DRAG TO STEER · TAP TO HOP · HOLD TO BOOST · PULL DOWN TO BRAKE</span></div>
     <div id="stick" aria-label="Joystick: push to ride, left and right to steer, down to brake or reverse"><div id="stick-thumb"></div></div>
-    <div id="touch-controls"><div class="touch-actions"><button data-action="horn" class="hx-small" aria-label="Bell"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5.5 5.5 0 0 0-5.5 5.5V14l-2 3h15l-2-3V9.5A5.5 5.5 0 0 0 12 4Z"/><path d="M10 19.5a2 2 0 0 0 4 0"/></svg></button><button data-action="taunt" class="hx-small" aria-label="Banter"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 3.5v-3.5H4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg></button></div></div>
+    <div id="touch-controls"><div class="touch-actions"><button data-action="horn" class="hx-small" aria-label="Bell"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4a5.5 5.5 0 0 0-5.5 5.5V14l-2 3h15l-2-3V9.5A5.5 5.5 0 0 0 12 4Z"/><path d="M10 19.5a2 2 0 0 0 4 0"/></svg></button><button data-action="snap" id="snap-btn" class="hx-small" aria-label="Snap a photo" hidden><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.2"/></svg></button><button data-action="taunt" class="hx-small" aria-label="Banter"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5h16v10H11l-4.5 3.5v-3.5H4Z"/><path d="M8 9.5h8M8 12.5h5"/></svg></button></div></div>
     <button id="stooshie-btn" class="hx-stooshie" data-action="stooshie" hidden aria-label="Start the Stooshie"><svg class="hx-i hx-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.1 6.4 20l1.1-6.2L3 9.4l6.2-.9Z"/></svg><b class="hx-sl" aria-hidden="true">STOOSHIE</b></button>
     <button id="boost-use" class="hx-boost-btn" data-hold="boost" aria-label="Hold to boost"><svg class="hx-i hx-fill hx-bolt" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 2 4 14h7l-1.5 8L20 10h-7Z"/></svg><b id="boost-use-label"></b><small class="hx-badge">×<span id="boost-count">0</span></small></button>
     <div class="news-ticker"><b>THE GRANITE BLETHER</b><div class="ticker-window"><span id="ticker">CIVIC PRIDE DAY: Council confirms absolutely nothing can go wrong.</span></div></div><div id="low-vignette" aria-hidden="true"></div><div id="hit-flash" aria-hidden="true"></div><div id="hit-dir" aria-hidden="true"></div><div id="beat-ring" hidden aria-hidden="true"><i></i></div><div id="speed-lines" aria-hidden="true"></div><div id="gull-splat" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
@@ -97,5 +97,5 @@
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=e5b120b14cf6"></script>
+<script type="module" src="src/app.js?v=43feecf3cd8a"></script>
 </body></html>
