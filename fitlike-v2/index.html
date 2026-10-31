@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/OpenSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/SuperChips.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=b851b9cf0fc2">
+  <link rel="stylesheet" href="style.css?v=6e61e8ab3bab">
 </head>
 <body>
 <main id="app">
@@ -33,7 +33,7 @@
       <div class="hub-picks"><button id="open-places" class="hub-pick" aria-label="Choose where to start"><svg class="ui-i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6-5.500-6-11a6 6 0 0 1 12 0c0 5.500-6 11-6 11Zm0-8a2.500 2.500 0 1 0 0-5 2.500 2.500 0 0 0 0 5Z"/></svg><span><small>START IN</small><b id="hub-place-name">The Wee Lanes</b></span><em aria-hidden="true">›</em></button><button id="open-riders" class="hub-pick" aria-label="Choose a rider"><i id="hub-ava" class="hub-ava" aria-hidden="true">I</i><span><small>RIDER</small><b id="rd-chip-name">Isla</b></span><em aria-hidden="true">›</em></button></div>
       <button id="play" class="button yellow hub-play">AWAY YE GO <span>↗︎</span></button>
       <p class="hub-best"><span>PERSONAL NONSENSE</span><strong id="menu-best">0</strong></p>
-      <nav class="hub-tabs" aria-label="Sections"><button data-hub="riders" aria-label="Riders"><i class="hub-ti" data-icon="riders"></i><span>Riders</span><em class="hub-badge" data-badge="riders" hidden></em></button><button data-hub="garage" aria-label="Garage"><i class="hub-ti" data-icon="garage"></i><span>Garage</span><em class="hub-badge" data-badge="garage" hidden></em></button><button data-hub="album" aria-label="Album"><i class="hub-ti" data-icon="album"></i><span>Album</span><em class="hub-badge" data-badge="album" hidden></em></button><button data-hub="missions" aria-label="Tips"><i class="hub-ti" data-icon="missions"></i><span>Tips</span><em class="hub-badge" data-badge="missions" hidden></em></button><button data-hub="daily" aria-label="Daily"><i class="hub-ti" data-icon="daily"></i><span>Daily</span><em class="hub-badge" data-badge="daily" hidden></em></button></nav>
+      <nav class="hub-tabs" aria-label="Sections"><button data-hub="riders" aria-label="Riders"><i class="hub-ti" data-icon="riders"></i><span>Riders</span><em class="hub-badge" data-badge="riders" hidden></em></button><button data-hub="garage" aria-label="Garage"><i class="hub-ti" data-icon="garage"></i><span>Garage</span><em class="hub-badge" data-badge="garage" hidden></em></button><button data-hub="shop" aria-label="Shop"><i class="hub-ti" data-icon="shop"></i><span>Shop</span><em class="hub-badge" data-badge="shop" hidden></em></button><button data-hub="album" aria-label="Album"><i class="hub-ti" data-icon="album"></i><span>Album</span><em class="hub-badge" data-badge="album" hidden></em></button><button data-hub="missions" aria-label="Tips"><i class="hub-ti" data-icon="missions"></i><span>Tips</span><em class="hub-badge" data-badge="missions" hidden></em></button><button data-hub="daily" aria-label="Daily"><i class="hub-ti" data-icon="daily"></i><span>Daily</span><em class="hub-badge" data-badge="daily" hidden></em></button></nav>
     </div>
     <div id="town-progress" class="town-progress" role="status" hidden><i aria-hidden="true"><b></b></i><span>Building the far side of town · 0%</span></div>
     <select id="start-place" hidden aria-hidden="true" tabindex="-1"></select>
@@ -41,7 +41,7 @@
 
   <section id="hud" hidden aria-label="Game dashboard">
     <div id="vitals" class="hx-vitals">
-      <div class="hx-r1"><div id="hearts" class="hx-hearts" role="img" aria-label="5 hearts"><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i></div><span class="hx-battery"><svg class="hx-i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="16.5" height="10" rx="2.2"/><path d="M21.5 10.5v3"/></svg><span class="hx-bar"><i id="battery-fill"></i></span><b id="battery">100<small>%</small></b></span></div>
+      <div class="hx-r1"><div id="hearts" class="hx-hearts" role="img" aria-label="5 hearts"><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i><i class="full"></i></div><span class="hx-battery"><svg class="hx-i hx-hay" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V9M12 9c0-3 1.500-5 4-6 0 3-1 5-4 6Zm0 4c0-3-1.500-5-4-6 0 3 1 5 4 6Zm0 4c0-3 1.500-5 4-6 0 3-1 5-4 6Z"/></svg><svg class="hx-i hx-bat" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="7" width="16.5" height="10" rx="2.2"/><path d="M21.5 10.5v3"/></svg><span class="hx-bar"><i id="battery-fill"></i></span><b id="battery">100<small>%</small></b></span></div>
       <div class="hx-r2"><div id="stars" class="hx-stars" role="img" aria-label="0 stars"><i></i><i></i><i></i><i></i><i></i></div><strong id="score">0</strong></div>
       <div class="hx-r3 hx-second"><svg class="hx-i hx-wrench" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.6 6.4a4.2 4.2 0 0 0-5.3 5.3L3.5 17.5l3 3 5.8-5.8a4.2 4.2 0 0 0 5.3-5.3l-2.7 2.7-2.6-.4-.4-2.6Z"/></svg><span id="bill">£0</span><span id="coins" class="hx-coins" hidden>● 0</span><div id="rings" class="hx-rings"><button class="hx-ring" data-ring="0" hidden><b></b><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="t" cx="12" cy="12" r="10"/><circle class="f" cx="12" cy="12" r="10"/></svg></button><button class="hx-ring" data-ring="1" hidden><b></b><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="t" cx="12" cy="12" r="10"/><circle class="f" cx="12" cy="12" r="10"/></svg></button><button class="hx-ring" data-ring="2" hidden><b></b><svg viewBox="0 0 24 24" aria-hidden="true"><circle class="t" cx="12" cy="12" r="10"/><circle class="f" cx="12" cy="12" r="10"/></svg></button></div></div>
       <div id="pursuit" class="hx-pursuit"><b id="chase-status">NO LOCALS CHASING</b><span id="hide-status">KEEP IT QUIET. AYE RIGHT.</span><span id="foot-police"></span><span id="heat-label">HEAT · KEEP IT QUIET</span><span class="hx-bar hx-heat"><i id="heat-fill"></i></span></div>
@@ -85,17 +85,22 @@
   <section id="riders" class="rd-screen" hidden aria-label="Choose a rider">
     <header class="rd-top"><button id="rd-back" class="rd-back" aria-label="Back to the menu">‹</button><h2>RIDERS</h2><span id="rd-count" class="rd-count">1 / 3</span></header>
     <div class="rd-stage"><button id="rd-prev" class="rd-arrow" aria-label="Previous rider">‹</button><button id="rd-next" class="rd-arrow" aria-label="Next rider">›</button></div>
-    <div class="rd-sheet"><div id="rd-strip" class="rd-dots" role="group" aria-label="The riders"></div><div class="rd-name"><b id="rd-name">Isla</b><em id="rd-line"></em></div><div id="rd-body"></div><p id="rd-note" class="rd-note"></p><div class="rd-actions"><button id="rd-action" class="button yellow">RIDE</button><button id="rd-trial" class="button rd-alt" hidden>TRY FOR ONE RUN</button><button id="rd-garage" class="button rd-alt">GARAGE</button></div></div>
+    <div class="rd-sheet"><div id="rd-strip" class="rd-dots" role="group" aria-label="The riders"></div><div class="rd-name"><b id="rd-name">Isla</b><em id="rd-line"></em></div><div id="rd-body"></div><p id="rd-note" class="rd-note"></p><div class="rd-actions"><button id="rd-action" class="button yellow">RIDE</button><button id="rd-tablet" class="button yellow rd-tablet" hidden>BUY WITH TABLET</button><button id="rd-trial" class="button rd-alt" hidden>TRY FOR ONE RUN</button><button id="rd-garage" class="button rd-alt">GARAGE</button></div></div>
   </section>
   <section id="garage" class="rd-screen gr-screen" hidden aria-label="The garage">
-    <header class="rd-top"><button id="gr-back" class="rd-back" aria-label="Back">‹</button><h2 id="gr-title">THE GARAGE</h2><span class="hb-wallet"><i class="hb-coin-i"></i><b id="gr-bawbees">0</b></span></header>
+    <header class="rd-top"><button id="gr-back" class="rd-back" aria-label="Back">‹</button><h2 id="gr-title">THE GARAGE</h2><span class="hb-wallet"><i class="hb-coin-i"></i><b id="gr-bawbees">0</b><i class="hb-tablet-i"></i><b id="gr-tablet">0</b></span></header>
     <div class="rd-stage"></div>
-    <div class="rd-sheet gr-sheet"><nav class="gr-tabs" role="tablist" aria-label="The garage"><button data-gr="up" role="tab">Upgrades</button><button data-gr="wrap" role="tab">Wraps</button><button data-gr="horn" role="tab">Horns</button></nav><div id="gr-body" class="gr-body"></div></div>
+    <div class="rd-sheet gr-sheet"><nav id="gr-tabs" class="gr-tabs scroll" role="tablist" aria-label="The garage"></nav><div id="gr-body" class="gr-body"></div><div id="gr-buy" class="gr-buy" hidden></div></div>
+  </section>
+  <section id="shop" class="rd-screen gr-screen" hidden aria-label="The shop">
+    <header class="rd-top"><button id="sh-back" class="rd-back" aria-label="Back">‹</button><h2 id="sh-title">THE SHOP</h2><span class="hb-wallet"><i class="hb-coin-i"></i><b id="sh-bawbees">0</b><i class="hb-tablet-i"></i><b id="sh-tablet">0</b></span></header>
+    <div class="rd-stage"></div>
+    <div class="rd-sheet gr-sheet"><nav id="sh-tabs" class="gr-tabs scroll" role="tablist" aria-label="The shop"></nav><div id="sh-body" class="gr-body"></div><div id="sh-buy" class="gr-buy" hidden></div></div>
   </section>
   <section id="records" class="overlay hb-overlay" hidden aria-label="The records"><div class="hb-card"><header class="hb-head"><h2>The Records</h2><span class="hb-wallet"><i class="hb-coin-i"></i><b id="rec-bawbees">0</b><i class="hb-tablet-i"></i><b id="rec-tablet">0</b></span><button id="records-close" class="close-dialog" aria-label="Close the records">×</button></header><nav class="hb-tabs" role="tablist"><button data-tab="missions" role="tab">Tips</button><button data-tab="rank" role="tab">Rank</button><button data-tab="album" role="tab">Album</button><button data-tab="garage" role="tab">Garage</button><button data-tab="daily" role="tab">Daily</button></nav><div id="records-body" class="hb-body"></div></div></section>
   <div id="comic-layer" aria-hidden="true"></div>
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=b851b9cf0fc2"></script>
+<script type="module" src="src/app.js?v=6e61e8ab3bab"></script>
 </body></html>
