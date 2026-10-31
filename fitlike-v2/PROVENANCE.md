@@ -24,7 +24,7 @@ The locally vendored Three.js r180 modules were copied from the supplied city pr
 
 ## Audio, and the reference font
 
-**Audio (31 October 2026):** the 14 borrowed MP3s have been **deleted**. Every sound is now made in code (`src/audio/synth.js`, listed in `docs/v2/SOUNDS.md`) and the music is synthesised (`src/audio/music.js`); nothing is downloaded, recorded or copied. Banter lines are original. The phone's own speech voices read them aloud when it has one.
+**Audio (31 October 2026):** the 14 borrowed MP3s have been **deleted**. Every sound is now made in code (`src/audio/synth.js`, listed in `docs/v2/SOUNDS.md`) and the music is synthesised (`src/audio/music.js`); nothing is downloaded, recorded or copied, **except three recorded clips** restored on 31 October 2026 at the owner's request for the caught scene (the punch, the crowd shout and the crash sting, in `assets/audio/caught/`, listed in `src/audio/files.js`). They are three of the earlier 14 placeholders (`planning/audio-manifest.json` in the history, copied from the DhakaRick package); their release clearance has never been established and the owner has been asked whether to keep or replace them. Banter lines are original. The phone's own speech voices read them aloud when it has one.
 
 `assets/fonts/mono.woff2` was copied from the local DhakaRick package.
 
