@@ -15,7 +15,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='17' fill='%23502270'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-size='49' font-weight='900' fill='%23ffdc19'%3E%3F%3C/text%3E%3C/svg%3E">
   <link rel="preload" href="assets/fonts/OpenSans-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/SuperChips.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=1331dc833b36">
+  <link rel="stylesheet" href="style.css?v=e5b120b14cf6">
 </head>
 <body>
 <main id="app">
@@ -71,7 +71,7 @@
      <div class="se-pane" data-pane="look" hidden><h3>THE TOWN</h3><div class="settings-grid"><label>THE WEATHER<select id="weather"><option value="grey">Granite grey</option><option value="sunny">Rare sunshine</option><option value="drizzle">A wee drizzle</option><option value="rain">Proper rain</option><option value="haar">Coastal haar</option><option value="snow">Snow business</option></select></label><label>THE LIGHT<select id="time"><option value="day">Daytime</option><option value="night">After dark</option></select></label><label>THE CROWD<select id="density"><option value="busy">Busy</option><option value="everyday">Everyday</option></select></label><label>THE GRAPHICS<select id="quality"><option value="full">Full of character</option><option value="standard">A good wee look</option><option value="lite">A lighter touch</option></select></label></div>
       <h3>MADE EASIER TO SEE</h3><div class="settings-grid"><label>TEXT SIZE<select id="se-text"><option value="s">Small</option><option value="m">Medium</option><option value="l">Large</option></select></label><label>COLOUR VISION<select id="se-cb"><option value="off">Standard colours</option><option value="deut">Red-green (deuteranopia)</option><option value="prot">Red-green (protanopia)</option><option value="trit">Blue-yellow (tritanopia)</option></select></label><label>OUTLINE ON THE RIDER<select id="se-outline"><option value="thin">Thin</option><option value="normal">Normal</option><option value="thick">Thick</option></select></label></div>
       <label class="check"><input id="se-hc" type="checkbox"> High-contrast HUD</label><label class="check"><input id="reduced-motion" type="checkbox"> Gentler camera effects</label><label class="check"><input id="se-calm" type="checkbox"> Fewer flashes (police lights and hit flashes stay under three a second)</label></div>
-     <div class="se-pane" data-pane="data" hidden><h3>SOUND</h3><label class="check"><input id="se-mute" type="checkbox"> Sound off</label><p class="audio-note">Temporary Bangla voices are in use. Local voices and music arrive later.</p>
+     <div class="se-pane" data-pane="data" hidden><h3>SOUND</h3><label class="check"><input id="se-mute" type="checkbox"> Sound off</label><label class="check"><input id="se-speech" type="checkbox"> Speak the banter aloud</label><div class="settings-grid"><label>BANTER STYLE<select id="se-banter"><option value="mixed">Mixed</option><option value="scots">Local patter</option><option value="bangla">Bangla</option></select></label></div><p class="hb-note">Banter is read by your phone’s own voices, so it sounds different on every phone; a language your phone has no voice for shows as text with a comic sting. Recorded voices and music arrive later.</p>
       <h3>YER PROGRESS</h3><p class="hb-note">Everything is kept on this phone. A back-up is your safety net if the phone clears the page.</p><div class="se-row"><button id="se-backup-file" class="button ui-alt">SAVE A BACK-UP FILE</button><button id="se-backup-code" class="button ui-alt">COPY A BACK-UP CODE</button></div><label class="se-restore">RESTORE FROM A CODE<textarea id="se-restore-code" rows="3" spellcheck="false" aria-label="Back-up code" placeholder="Paste a back-up code here"></textarea></label><div class="se-row"><button id="se-restore-go" class="button ui-alt">RESTORE FROM THE CODE</button><label class="button ui-alt se-file">RESTORE FROM A FILE<input id="se-restore-file" type="file" accept="application/json,.json,.txt" hidden></label></div><p id="se-note" class="hb-note" role="status"></p>
       <h3>MORE</h3><div class="se-row"><button id="show-controls" class="button ui-alt">ALL THE CONTROLS</button><button data-dialog="disclaimer" class="button ui-alt">DISCLAIMER</button></div></div>
     </div></div></section>
@@ -97,5 +97,5 @@
   <dialog id="info-dialog"><button id="close-dialog" class="close-dialog" aria-label="Close">×</button><div id="dialog-content"></div></dialog>
   <div id="toast" role="status" hidden></div>
 </main>
-<script type="module" src="src/app.js?v=1331dc833b36"></script>
+<script type="module" src="src/app.js?v=e5b120b14cf6"></script>
 </body></html>

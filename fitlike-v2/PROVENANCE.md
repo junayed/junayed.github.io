@@ -22,9 +22,11 @@ Source root: `/Users/mdjunayedhasan/Desktop/Image Sec 3D model/Aberdeen/aberdeen
 
 The locally vendored Three.js r180 modules were copied from the supplied city project's vendor directory. Three.js is MIT-licensed. Its copyright notices and `vendor/THREE-LICENSE.txt` are retained. No remote CDN is used.
 
-## Dhaka reference audio and font
+## Audio, and the reference font
 
-The 14 MP3s in `assets/audio/temporary-bangla/` and `assets/fonts/mono.woff2` were copied from the local DhakaRick package. The exact clips and hashes are in `planning/audio-manifest.json`. These remain development placeholders; their presence on disk is not a grant of recording rights or a claim of new authorship.
+**Audio (31 October 2026):** the 14 borrowed MP3s have been **deleted**. Every sound is now made in code (`src/audio/synth.js`, listed in `docs/v2/SOUNDS.md`) and the music is synthesised (`src/audio/music.js`); nothing is downloaded, recorded or copied. Banter lines are original. The phone's own speech voices read them aloud when it has one.
+
+`assets/fonts/mono.woff2` was copied from the local DhakaRick package.
 
 DhakaRick's own provenance records its origin as a modified local copy of the deployed **Baper Rasta** game by **Omar Faruqe Riyad**, packaged from an earlier `gametest/local-build`. This project does not contain a copy of that game's minified game bundle. The new gameplay modules are separate implementations. The supplied Share Tech Mono font's provenance should be retained/confirmed for distribution, or replaced with a cleared local/system alternative.
 
