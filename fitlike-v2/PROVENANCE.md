@@ -24,7 +24,7 @@ The locally vendored Three.js r180 modules were copied from the supplied city pr
 
 ## Audio, and the reference font
 
-**Audio (31 October 2026):** the 14 borrowed MP3s have been **deleted**. Every sound is now made in code (`src/audio/synth.js`, listed in `docs/v2/SOUNDS.md`) and the music is synthesised (`src/audio/music.js`); nothing is downloaded, recorded or copied, **except three recorded clips** restored on 31 October 2026 at the owner's request for the caught scene (the punch, the crowd shout and the crash sting, in `assets/audio/caught/`, listed in `src/audio/files.js`). They are three of the earlier 14 placeholders (`planning/audio-manifest.json` in the history, copied from the DhakaRick package); their release clearance has never been established and the owner has been asked whether to keep or replace them. Banter lines are original. The phone's own speech voices read them aloud when it has one.
+**Audio (31 October and 3 November 2026):** the 14 borrowed MP3s were **deleted** on 31 October; the last three of them (the caught scene's punch, crowd shout and crash sting, briefly restored) were **deleted on 3 November 2026** at the owner's request and replaced by sounds made in code. The game ships **no audio files**: every sound is made in code (`src/audio/synth.js` and the files it spreads in, listed in `docs/v2/SOUNDS.md`) and the music is synthesised (`src/audio/music.js`); nothing is downloaded, recorded or copied, and nothing names or imitates a particular recording. Banter lines are original; nothing is spoken (no speech synthesis): a Doric line is shown as text with a babble voice made in code.
 
 `assets/fonts/mono.woff2` was copied from the local DhakaRick package.
 
@@ -36,7 +36,7 @@ DhakaRick's own provenance records its origin as a modified local copy of the de
 
 ## Runtime behaviour
 
-All JavaScript, geometry, branding, fonts and audio are local. Runtime fetches load only the local audio manifest and local clips. There is no analytics, account, hosted leaderboard or external asset service. The development server binds to `127.0.0.1`. Exporting a front page creates a local browser download; no image is uploaded.
+All JavaScript, geometry, branding and fonts are local, and every sound is made in code at run time. The game fetches no audio. There is no analytics, account, hosted leaderboard or external asset service. The development server binds to `127.0.0.1`. Exporting a front page creates a local browser download; no image is uploaded.
 
 ## Expanded city revision, 28 October 2026
 
